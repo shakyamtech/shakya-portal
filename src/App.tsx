@@ -51,6 +51,8 @@ function App() {
   const [progress, setProgress] = useState(0);
   const [statusText, setStatusText] = useState("Initializing System...");
   const [isLoaded, setIsLoaded] = useState(false);
+  const [activeSection, setActiveSection] = useState('about');
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -107,6 +109,73 @@ function App() {
     };
   }, [loading]);
 
+  // Scroll tracking for Active Navbar Section and Back to Top Visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      // Toggle back to top button
+      if (window.scrollY > 400) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+
+      // Track active nav section
+      const sections = ['about', 'frameworks', 'work', 'toolkit', 'contact'];
+      const scrollPosition = window.scrollY + 250;
+
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Initial call to set active section
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Intersection Observer for Scroll reveals
+  useEffect(() => {
+    if (loading) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    // Give a micro delay for DOM stabilization after preloader lifts
+    const timer = setTimeout(() => {
+      const elements = document.querySelectorAll('.reveal-element');
+      elements.forEach((el) => observer.observe(el));
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
+  }, [loading]);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className={isLoaded ? 'animate-page-reveal' : ''} style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       {/* Premium Preloader Overlay */}
@@ -138,11 +207,11 @@ function App() {
       >
         <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent)' }}>Mahesh <span style={{color: 'white'}}>Shakya</span></h1>
         <div className="nav-links">
-          <a href="#about">About</a>
-          <a href="#frameworks">Tech</a>
-          <a href="#work">Work</a>
-          <a href="#toolkit">Gear</a>
-          <a href="#contact">Contact</a>
+          <a href="#about" className={activeSection === 'about' ? 'active' : ''}>About</a>
+          <a href="#frameworks" className={activeSection === 'frameworks' ? 'active' : ''}>Tech</a>
+          <a href="#work" className={activeSection === 'work' ? 'active' : ''}>Work</a>
+          <a href="#toolkit" className={activeSection === 'toolkit' ? 'active' : ''}>Gear</a>
+          <a href="#contact" className={activeSection === 'contact' ? 'active' : ''}>Contact</a>
         </div>
       </nav>
 
@@ -216,7 +285,7 @@ function App() {
       </main>
 
       {/* Frameworks & Technologies Section */}
-      <section id="frameworks" style={{ padding: '100px 20px', background: 'var(--bg-secondary)', borderTop: '1px solid rgba(255,255,255,0.03)' }}>
+      <section id="frameworks" className="reveal-element" style={{ padding: '100px 20px', background: 'var(--bg-secondary)', borderTop: '1px solid rgba(255,255,255,0.03)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 className="section-title"><span className="gradient-text">Frameworks & Tech Stack</span></h2>
           <p style={{ color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '620px', margin: '-30px auto 60px auto', lineHeight: 1.7, fontSize: '1.1rem' }}>
@@ -327,7 +396,7 @@ function App() {
       </section>
 
       {/* Selected Work Section */}
-      <section id="work" style={{ padding: '100px 20px', background: 'var(--bg-primary)', borderTop: '1px solid rgba(255,255,255,0.02)' }}>
+      <section id="work" className="reveal-element" style={{ padding: '100px 20px', background: 'var(--bg-primary)', borderTop: '1px solid rgba(255,255,255,0.02)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 className="section-title"><span className="gradient-text">Selected Work</span></h2>
           
@@ -371,7 +440,7 @@ function App() {
       </section>
 
       {/* The Creative Toolkit Section */}
-      <section id="toolkit" style={{ padding: '100px 20px', background: 'var(--bg-secondary)', borderTop: '1px solid rgba(255,255,255,0.03)' }}>
+      <section id="toolkit" className="reveal-element" style={{ padding: '100px 20px', background: 'var(--bg-secondary)', borderTop: '1px solid rgba(255,255,255,0.03)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 className="section-title"><span className="gradient-text">The Creative Toolkit</span></h2>
           <p style={{ color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '640px', margin: '-30px auto 60px auto', lineHeight: 1.7, fontSize: '1.1rem' }}>
@@ -401,7 +470,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <footer id="contact" style={{ padding: '80px 20px', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', background: 'var(--bg-primary)' }}>
+      <footer id="contact" className="reveal-element" style={{ padding: '80px 20px', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', background: 'var(--bg-primary)' }}>
         <h2 className="section-title" style={{ marginBottom: '20px' }}>Let's Create Something <span className="gradient-text">Amazing</span></h2>
         <p style={{ color: 'var(--text-secondary)', maxWidth: '500px', margin: '0 auto 40px auto', lineHeight: 1.6 }}>
           Ready to elevate your digital presence? Reach out to discuss your next project, be it a web app, design work, or video editing.
@@ -424,6 +493,17 @@ function App() {
           © {new Date().getFullYear()} Mahesh Shakya. All Rights Reserved.
         </p>
       </footer>
+
+      {/* Floating Back to Top Button */}
+      {showBackToTop && (
+        <button 
+          onClick={scrollToTop} 
+          className="back-to-top"
+          aria-label="Back to top"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
+      )}
     </div>
   );
 }
