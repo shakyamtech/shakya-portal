@@ -263,6 +263,29 @@ body {
   gap: 40px;
 }
 
+/* Toolkit Grid & Cards */
+.toolkit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.toolkit-card {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.toolkit-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(212, 175, 55, 0.25) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .nav-container {
@@ -318,11 +341,11 @@ body {
     margin-bottom: 30px;
   }
 
-  .work-grid {
+  .work-grid, .toolkit-grid {
     grid-template-columns: 1fr;
   }
   
-  #work, #contact {
+  #work, #toolkit, #contact {
     padding: 60px 20px;
   }
 }

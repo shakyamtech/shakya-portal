@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Globe, Smartphone, Palette, Calculator, Video } from 'lucide-react';
+import { Globe, Smartphone, Palette, Calculator, Video, Camera, Aperture, Navigation, Sliders } from 'lucide-react';
 import { FaWhatsapp, FaFacebookMessenger, FaGithub, FaPhone } from 'react-icons/fa6';
 import './index.css';
 
@@ -9,6 +9,37 @@ const rolesData = [
   { name: "Graphic Designer", icon: <Palette size={40} strokeWidth={1.5} /> },
   { name: "Account Book Keeper", icon: <Calculator size={40} strokeWidth={1.5} /> },
   { name: "Video Editor", icon: <Video size={40} strokeWidth={1.5} /> }
+];
+
+const gearData = [
+  {
+    id: "camera",
+    name: "Professional Camera Setup",
+    description: "High-resolution full-frame camera capturing hyper-detailed 4K video and photography.",
+    icon: <Camera size={36} strokeWidth={1.5} />,
+    tags: ["4K Cinematic", "Full Frame", "Log Profiles"]
+  },
+  {
+    id: "lenses",
+    name: "Premium Glass Lenses",
+    description: "High-speed prime and zoom lenses delivering cinematic shallow depth-of-field and ultra-sharp captures.",
+    icon: <Aperture size={36} strokeWidth={1.5} />,
+    tags: ["F/1.8 Prime", "Wide & Zoom", "Crisp Focus"]
+  },
+  {
+    id: "drone",
+    name: "Aerial Cinematic Drone",
+    description: "Intelligent quadcopter capturing sweeping 4K bird's-eye views and high-altitude tracking shots.",
+    icon: <Navigation size={36} strokeWidth={1.5} style={{ transform: 'rotate(45deg)' }} />,
+    tags: ["4K Bird's Eye", "Active Tracking", "60 FPS Video"]
+  },
+  {
+    id: "gimbal",
+    name: "3-Axis Motorized Gimbal",
+    description: "Active stabilizer system delivering buttery-smooth dynamic hand-held tracking motions.",
+    icon: <Sliders size={36} strokeWidth={1.5} />,
+    tags: ["3-Axis Balance", "Active Stabilization", "Dynamic Tracking"]
+  }
 ];
 
 const roles = rolesData.map(r => r.name);
@@ -31,6 +62,7 @@ function App() {
         <div className="nav-links">
           <a href="#about">About</a>
           <a href="#work">Work</a>
+          <a href="#toolkit">Gear</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -129,6 +161,36 @@ function App() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* The Creative Toolkit Section */}
+      <section id="toolkit" style={{ padding: '100px 20px', background: 'var(--bg-primary)', borderTop: '1px solid rgba(255,255,255,0.02)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h2 className="section-title"><span className="gradient-text">The Creative Toolkit</span></h2>
+          <p style={{ color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '600px', margin: '-30px auto 60px auto', lineHeight: 1.6, fontSize: '1.1rem' }}>
+            Operating state-of-the-art capture gear and stabilized systems to elevate visual storytelling and physical production.
+          </p>
+          <div className="toolkit-grid">
+            {gearData.map((gear, idx) => (
+              <div key={idx} className="glass-panel toolkit-card">
+                <div style={{ color: 'var(--accent)', display: 'inline-flex', padding: '15px', borderRadius: '12px', background: 'rgba(212, 175, 55, 0.05)', width: 'fit-content' }}>
+                  {gear.icon}
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
+                  <div>
+                    <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '10px' }}>{gear.name}</h3>
+                    <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem', marginBottom: '20px' }}>{gear.description}</p>
+                  </div>
+                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: 'auto' }}>
+                    {gear.tags.map((tag, tIdx) => (
+                      <span key={tIdx} style={{ fontSize: '0.7rem', padding: '4px 10px', background: 'rgba(255, 255, 255, 0.05)', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.08)', color: 'var(--text-secondary)', fontWeight: 600 }}>{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
