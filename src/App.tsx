@@ -82,12 +82,14 @@ function App() {
       if (elapsed >= duration) {
         clearInterval(interval);
         setIsExiting(true);
+        // Start page reveal at 400ms — midway through the 800ms overlay slide-up
+        // so content is already blooming as the preloader lifts away
         setTimeout(() => {
           setIsLoaded(true);
-        }, 100);
+        }, 400);
         setTimeout(() => {
           setLoading(false);
-        }, 800);
+        }, 900);
       }
     }, 30);
     
@@ -106,7 +108,7 @@ function App() {
   }, [loading]);
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div className={isLoaded ? 'animate-page-reveal' : ''} style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       {/* Premium Preloader Overlay */}
       {loading && (
         <div className={`preloader-overlay ${isExiting ? 'exit' : ''}`}>
@@ -132,8 +134,7 @@ function App() {
 
       {/* Navigation */}
       <nav 
-        className={`glass-panel nav-container ${isLoaded ? 'animate-slide-down' : ''}`}
-        style={{ opacity: isLoaded ? 1 : 0, transition: 'opacity 0.5s ease' }}
+        className={`glass-panel nav-container ${isLoaded ? 'animate-slide-down' : 'init-hidden'}`}
       >
         <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent)' }}>Mahesh <span style={{color: 'white'}}>Shakya</span></h1>
         <div className="nav-links">
@@ -149,8 +150,8 @@ function App() {
         <div className="hero-content-wrapper">
           
           <div 
-            className={`hero-text ${isLoaded ? 'animate-premium-fade-up' : ''}`} 
-            style={{ animationDelay: '0.1s', opacity: isLoaded ? 1 : 0, transition: 'opacity 0.5s ease' }}
+            className={`hero-text ${isLoaded ? 'animate-premium-fade-up' : 'init-hidden'}`} 
+            style={{ animationDelay: '0.15s' }}
           >
             <h2 style={{ fontSize: '1.2rem', color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '15px' }}>Hello, I am Mahesh Shakya</h2>
             <h1 className="hero-title">
@@ -180,8 +181,8 @@ function App() {
           </div>
 
           <div 
-            className={`hero-image-wrapper ${isLoaded ? 'animate-scale-in' : ''}`} 
-            style={{ animationDelay: '0.3s', opacity: isLoaded ? 1 : 0, transition: 'opacity 0.5s ease' }}
+            className={`hero-image-wrapper ${isLoaded ? 'animate-scale-in' : 'init-hidden'}`} 
+            style={{ animationDelay: '0.35s' }}
           >
             <div className="glass-panel hero-image-container">
               <div className="hero-image-crop">
@@ -196,14 +197,12 @@ function App() {
           {rolesData.map((role, idx) => (
             <div 
               key={idx} 
-              className={`glass-panel role-card ${isLoaded ? 'animate-stagger-fade-up' : ''}`} 
+              className={`glass-panel role-card ${isLoaded ? 'animate-stagger-fade-up' : 'init-hidden'}`} 
               style={{ 
                 display: 'flex', 
                 flexDirection: 'column', 
                 alignItems: 'center',
-                animationDelay: `${0.5 + idx * 0.1}s`,
-                opacity: isLoaded ? 1 : 0,
-                transition: 'opacity 0.5s ease'
+                animationDelay: `${0.55 + idx * 0.15}s`
               }}
             >
               <div style={{ color: 'var(--accent)', marginBottom: '15px' }}>
