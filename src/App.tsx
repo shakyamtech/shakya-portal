@@ -46,6 +46,11 @@ const roles = rolesData.map(r => r.name);
 
 function App() {
   const [activeRole, setActiveRole] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [isExiting, setIsExiting] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [statusText, setStatusText] = useState("Initializing System...");
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -54,10 +59,82 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const startTime = Date.now();
+    const duration = 1800; // 1.8 seconds premium preload duration
+    
+    const interval = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const progressPercent = Math.min(Math.floor((elapsed / duration) * 100), 100);
+      
+      setProgress(progressPercent);
+      
+      if (progressPercent < 30) {
+        setStatusText("Loading Creative Assets...");
+      } else if (progressPercent < 60) {
+        setStatusText("Optimizing Layout Curves...");
+      } else if (progressPercent < 85) {
+        setStatusText("Calibrating Cinematic Gear...");
+      } else {
+        setStatusText("Entering Portfolio...");
+      }
+      
+      if (elapsed >= duration) {
+        clearInterval(interval);
+        setIsExiting(true);
+        setTimeout(() => {
+          setIsLoaded(true);
+        }, 100);
+        setTimeout(() => {
+          setLoading(false);
+        }, 800);
+      }
+    }, 30);
+    
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (loading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [loading]);
+
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      {/* Premium Preloader Overlay */}
+      {loading && (
+        <div className={`preloader-overlay ${isExiting ? 'exit' : ''}`}>
+          <div className="preloader-content">
+            <h1 className="preloader-logo">
+              Mahesh <span>Shakya</span>
+            </h1>
+            <div className="preloader-progress-container">
+              <div 
+                className="preloader-progress-bar" 
+                style={{ width: `${progress}%` }}
+              ></div>
+            </div>
+            <div className="preloader-percentage">
+              {progress.toString().padStart(3, '0')}%
+            </div>
+            <div className="preloader-status">
+              {statusText}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Navigation */}
-      <nav className="glass-panel nav-container animate-slide-down">
+      <nav 
+        className={`glass-panel nav-container ${isLoaded ? 'animate-slide-down' : ''}`}
+        style={{ opacity: isLoaded ? 1 : 0, transition: 'opacity 0.5s ease' }}
+      >
         <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent)' }}>Mahesh <span style={{color: 'white'}}>Shakya</span></h1>
         <div className="nav-links">
           <a href="#about">About</a>
@@ -71,7 +148,10 @@ function App() {
       <main className="hero-section">
         <div className="hero-content-wrapper">
           
-          <div className="hero-text animate-premium-fade-up" style={{ animationDelay: '0.1s' }}>
+          <div 
+            className={`hero-text ${isLoaded ? 'animate-premium-fade-up' : ''}`} 
+            style={{ animationDelay: '0.1s', opacity: isLoaded ? 1 : 0, transition: 'opacity 0.5s ease' }}
+          >
             <h2 style={{ fontSize: '1.2rem', color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '15px' }}>Hello, I am Mahesh Shakya</h2>
             <h1 className="hero-title">
               I craft experiences as a <br/>
@@ -99,7 +179,10 @@ function App() {
             </div>
           </div>
 
-          <div className="hero-image-wrapper animate-scale-in" style={{ animationDelay: '0.3s' }}>
+          <div 
+            className={`hero-image-wrapper ${isLoaded ? 'animate-scale-in' : ''}`} 
+            style={{ animationDelay: '0.3s', opacity: isLoaded ? 1 : 0, transition: 'opacity 0.5s ease' }}
+          >
             <div className="glass-panel hero-image-container">
               <div className="hero-image-crop">
                 <img src="/images/profile_avatar.jpg" alt="Mahesh Shakya Avatar" className="hero-image" />
@@ -113,12 +196,14 @@ function App() {
           {rolesData.map((role, idx) => (
             <div 
               key={idx} 
-              className="glass-panel role-card animate-stagger-fade-up" 
+              className={`glass-panel role-card ${isLoaded ? 'animate-stagger-fade-up' : ''}`} 
               style={{ 
                 display: 'flex', 
                 flexDirection: 'column', 
                 alignItems: 'center',
-                animationDelay: `${0.5 + idx * 0.1}s`
+                animationDelay: `${0.5 + idx * 0.1}s`,
+                opacity: isLoaded ? 1 : 0,
+                transition: 'opacity 0.5s ease'
               }}
             >
               <div style={{ color: 'var(--accent)', marginBottom: '15px' }}>
