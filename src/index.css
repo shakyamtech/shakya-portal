@@ -409,6 +409,67 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.15);
 }
 
+/* Frameworks & Tech Stack Grid */
+.frameworks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.framework-card {
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  cursor: default;
+  transition: var(--transition-card);
+  will-change: transform, box-shadow, border-color;
+}
+
+.framework-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.08);
+}
+
+.framework-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.framework-card:hover .framework-icon-wrap {
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.framework-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.framework-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  background: rgba(212, 175, 55, 0.07);
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
 /* Mobile Responsiveness & Premium Enhancements */
 @media (max-width: 768px) {
   .nav-container {
@@ -587,6 +648,30 @@ body {
     width: 100%;
     padding: 14px 20px !important;
     font-size: 1rem !important;
+  }
+
+  .frameworks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .framework-card {
+    padding: 20px 14px;
+    gap: 10px;
+  }
+
+  .framework-icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+  }
+
+  .framework-name {
+    font-size: 0.85rem;
+  }
+
+  .framework-tag {
+    font-size: 0.68rem;
   }
 }
 

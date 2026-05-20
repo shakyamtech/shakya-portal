@@ -139,6 +139,7 @@ function App() {
         <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent)' }}>Mahesh <span style={{color: 'white'}}>Shakya</span></h1>
         <div className="nav-links">
           <a href="#about">About</a>
+          <a href="#frameworks">Tech</a>
           <a href="#work">Work</a>
           <a href="#toolkit">Gear</a>
           <a href="#contact">Contact</a>
@@ -146,7 +147,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <main className="hero-section">
+      <main id="about" className="hero-section">
         <div className="hero-content-wrapper">
           
           <div 
@@ -214,8 +215,119 @@ function App() {
         </div>
       </main>
 
+      {/* Frameworks & Technologies Section */}
+      <section id="frameworks" style={{ padding: '100px 20px', background: 'var(--bg-secondary)', borderTop: '1px solid rgba(255,255,255,0.03)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h2 className="section-title"><span className="gradient-text">Frameworks & Tech Stack</span></h2>
+          <p style={{ color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '620px', margin: '-30px auto 60px auto', lineHeight: 1.7, fontSize: '1.1rem' }}>
+            The technologies I build with — from frontend frameworks to backend runtimes, databases, and dev tooling.
+          </p>
+
+          <div className="frameworks-grid">
+            {/* React / React Native */}
+            <div className="glass-panel framework-card">
+              <div className="framework-icon-wrap" style={{ background: 'rgba(97, 218, 251, 0.08)', color: '#61DAFB' }}>
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M12 13.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 17.5c-4.14 0-7.5-3.36-7.5-7.5S7.86 4.5 12 4.5s7.5 3.36 7.5 7.5-3.36 7.5-7.5 7.5Z"/></svg>
+              </div>
+              <span className="framework-name">React / React Native</span>
+              <span className="framework-tag">Frontend / Mobile</span>
+            </div>
+
+            {/* Next.js */}
+            <div className="glass-panel framework-card">
+              <div className="framework-icon-wrap" style={{ background: 'rgba(255,255,255,0.06)', color: '#FFFFFF' }}>
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 0 0-2.499-.523A33.119 33.119 0 0 0 11.573 0Z"/></svg>
+              </div>
+              <span className="framework-name">Next.js</span>
+              <span className="framework-tag">Full-Stack Framework</span>
+            </div>
+
+            {/* Vue.js */}
+            <div className="glass-panel framework-card">
+              <div className="framework-icon-wrap" style={{ background: 'rgba(66, 184, 131, 0.08)', color: '#42B883' }}>
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M24 1.61h-9.94L12 5.16 9.94 1.61H0l12 20.78L24 1.61ZM12 14.08 5.16 2.23H9.59L12 6.41l2.41-4.18h4.43L12 14.08Z"/></svg>
+              </div>
+              <span className="framework-name">Vue.js</span>
+              <span className="framework-tag">Frontend Framework</span>
+            </div>
+
+            {/* Flutter */}
+            <div className="glass-panel framework-card">
+              <div className="framework-icon-wrap" style={{ background: 'rgba(84, 197, 248, 0.08)', color: '#54C5F8' }}>
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.37zm.159 11.786l-6.729 6.734 6.729 6.72H21.7l-6.74-6.72 6.74-6.734h-7.227z"/></svg>
+              </div>
+              <span className="framework-name">Flutter</span>
+              <span className="framework-tag">Cross-Platform Mobile</span>
+            </div>
+
+            {/* Node.js */}
+            <div className="glass-panel framework-card">
+              <div className="framework-icon-wrap" style={{ background: 'rgba(104, 160, 99, 0.08)', color: '#68A063' }}>
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M11.998 24a2.01 2.01 0 0 1-1.006-.269l-3.204-1.898c-.479-.268-.245-.363-.087-.418.638-.222.765-.272 1.443-.657a.247.247 0 0 1 .239.017l2.462 1.461a.318.318 0 0 0 .296 0l9.598-5.54a.317.317 0 0 0 .148-.271V7.562a.317.317 0 0 0-.148-.272l-9.596-5.537a.317.317 0 0 0-.297 0L2.249 7.29a.317.317 0 0 0-.149.272v11.077c0 .111.06.215.149.271l2.628 1.518c1.427.713 2.301-.127 2.301-.972V8.358a.285.285 0 0 1 .285-.285h1.248a.285.285 0 0 1 .285.285v11.097c0 1.901-1.035 2.993-2.834 2.993-.553 0-.99 0-2.207-.6l-2.511-1.448A2.02 2.02 0 0 1 .24 18.638V7.562a2.02 2.02 0 0 1 1.007-1.75L10.845.274a2.096 2.096 0 0 1 2.011 0l9.598 5.538A2.02 2.02 0 0 1 23.76 7.562v11.077a2.02 2.02 0 0 1-1.007 1.75l-9.598 5.542A2.01 2.01 0 0 1 11.998 24Z"/></svg>
+              </div>
+              <span className="framework-name">Node.js / Express</span>
+              <span className="framework-tag">Backend Runtime</span>
+            </div>
+
+            {/* Laravel */}
+            <div className="glass-panel framework-card">
+              <div className="framework-icon-wrap" style={{ background: 'rgba(255, 45, 32, 0.08)', color: '#FF2D20' }}>
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M23.642 5.43a.364.364 0 0 1 .014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 0 1-.188.326L9.93 23.949a.316.316 0 0 1-.066.027.29.29 0 0 1-.146 0 .348.348 0 0 1-.069-.027L.534 18.755a.376.376 0 0 1-.19-.326V2.974c0-.036.003-.073.014-.11a.37.37 0 0 1 .014-.036l.002-.008a.354.354 0 0 1 .029-.048.381.381 0 0 1 .026-.03.336.336 0 0 1 .04-.033.41.41 0 0 1 .073-.05L4.916.17a.378.378 0 0 1 .378 0l4.378 2.528a.378.378 0 0 1 .19.326v4.934l3.944-2.272V1.152a.377.377 0 0 1 .188-.326L18.37.17a.378.378 0 0 1 .378 0l4.753 2.744a.378.378 0 0 1 .14.516z"/></svg>
+              </div>
+              <span className="framework-name">Laravel / PHP</span>
+              <span className="framework-tag">Backend Framework</span>
+            </div>
+
+            {/* Django */}
+            <div className="glass-panel framework-card">
+              <div className="framework-icon-wrap" style={{ background: 'rgba(9, 46, 22, 0.3)', color: '#44B78B' }}>
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M11.146 0h3.924v18.166c-2.013.382-3.491.535-5.097.535-4.791 0-7.288-2.166-7.288-6.32 0-4.002 2.65-6.6 6.753-6.6.637 0 1.121.05 1.708.204V0zm0 9.143a3.894 3.894 0 0 0-1.32-.204c-1.99 0-3.138 1.223-3.138 3.364 0 2.091 1.097 3.239 3.113 3.239.434 0 .789-.025 1.345-.102V9.142zM21.314 6.06v11.683c0 4.034-.306 5.97-1.218 7.637-.847 1.617-1.97 2.64-4.289 3.76l-3.644-1.72c2.319-1.07 3.442-2.04 4.136-3.506.745-1.49.992-3.16.992-7.663V6.06h4.023zM17.19 0h4.024v4.127H17.19z"/></svg>
+              </div>
+              <span className="framework-name">Django / Python</span>
+              <span className="framework-tag">Backend Framework</span>
+            </div>
+
+            {/* Vite */}
+            <div className="glass-panel framework-card">
+              <div className="framework-icon-wrap" style={{ background: 'rgba(189, 52, 254, 0.08)', color: '#BD34FE' }}>
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M24 0L14.6161 21.7454L11.4576 15.1176L18.1176 0H24ZM7.17647 0L13.5294 13.0588L10.2353 20.2353L0 0H7.17647Z"/></svg>
+              </div>
+              <span className="framework-name">Vite</span>
+              <span className="framework-tag">Build Tool</span>
+            </div>
+
+            {/* Tailwind CSS */}
+            <div className="glass-panel framework-card">
+              <div className="framework-icon-wrap" style={{ background: 'rgba(6, 182, 212, 0.08)', color: '#06B6D4' }}>
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/></svg>
+              </div>
+              <span className="framework-name">Tailwind CSS</span>
+              <span className="framework-tag">CSS Framework</span>
+            </div>
+
+            {/* Firebase */}
+            <div className="glass-panel framework-card">
+              <div className="framework-icon-wrap" style={{ background: 'rgba(255, 196, 0, 0.08)', color: '#FFC400' }}>
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M3.89 15.672L6.255.461A.542.542 0 0 1 7.27.288l2.543 4.771zm16.794 3.692l-2.25-14a.54.54 0 0 0-.919-.295L3.316 19.365l7.856 4.427a1.621 1.621 0 0 0 1.588 0zM14.3 7.147l-1.82-3.482a.542.542 0 0 0-.96 0L3.53 17.984z"/></svg>
+              </div>
+              <span className="framework-name">Firebase / Supabase</span>
+              <span className="framework-tag">Backend-as-a-Service</span>
+            </div>
+
+            {/* MongoDB */}
+            <div className="glass-panel framework-card">
+              <div className="framework-icon-wrap" style={{ background: 'rgba(0, 237, 100, 0.08)', color: '#00ED64' }}>
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0 1 11.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 0 0 3.639-8.464c.01-.814-.103-1.662-.197-2.218z"/></svg>
+              </div>
+              <span className="framework-name">MongoDB / MySQL</span>
+              <span className="framework-tag">Database</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Selected Work Section */}
-      <section id="work" style={{ padding: '100px 20px', background: 'var(--bg-secondary)' }}>
+      <section id="work" style={{ padding: '100px 20px', background: 'var(--bg-primary)', borderTop: '1px solid rgba(255,255,255,0.02)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 className="section-title"><span className="gradient-text">Selected Work</span></h2>
           
@@ -259,7 +371,7 @@ function App() {
       </section>
 
       {/* The Creative Toolkit Section */}
-      <section id="toolkit" style={{ padding: '100px 20px', background: 'var(--bg-primary)', borderTop: '1px solid rgba(255,255,255,0.02)' }}>
+      <section id="toolkit" style={{ padding: '100px 20px', background: 'var(--bg-secondary)', borderTop: '1px solid rgba(255,255,255,0.03)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 className="section-title"><span className="gradient-text">The Creative Toolkit</span></h2>
           <p style={{ color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '640px', margin: '-30px auto 60px auto', lineHeight: 1.7, fontSize: '1.1rem' }}>
