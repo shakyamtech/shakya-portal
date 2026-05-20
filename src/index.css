@@ -388,67 +388,184 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.15);
 }
 
-/* Mobile Responsiveness */
+/* Mobile Responsiveness & Premium Enhancements */
 @media (max-width: 768px) {
   .nav-container {
     margin: 10px;
-    padding: 15px 20px;
+    padding: 12px 18px;
+    border-radius: 12px;
   }
   
+  .nav-container h1 {
+    font-size: 1.25rem !important;
+  }
+
   .nav-links {
-    gap: 15px;
-    font-size: 0.9rem;
+    gap: 12px;
+    font-size: 0.85rem;
   }
 
   .hero-section {
-    padding: 40px 20px;
+    padding: 20px 16px 60px 16px;
   }
 
   .hero-content-wrapper {
-    gap: 40px;
+    gap: 25px;
     text-align: center;
+    flex-direction: column;
   }
 
-  .hero-title {
-    font-size: 2.8rem;
-    min-height: 80px;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-    margin: 0 auto 30px auto;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-    flex-wrap: wrap;
+  /* Make profile image appear first on mobile for a welcoming personal intro */
+  .hero-image-wrapper {
+    order: -1;
+    margin-bottom: 10px;
   }
 
   .hero-image-crop {
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
+    border-width: 3px;
+  }
+
+  .hero-text {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .hero-text h2 {
+    font-size: 0.95rem !important;
+    letter-spacing: 1.5px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    min-height: 130px; /* Account for wrapped multi-line typed text */
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 auto 25px auto;
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 14px 24px;
+    text-align: center;
+  }
+
+  .social-links-group {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .btn-social {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    justify-content: center;
   }
 
   .roles-grid {
-    margin-top: 60px;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin-top: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .role-card {
-    padding: 25px 15px;
+    padding: 20px 10px;
+  }
+
+  .role-card h3 {
+    font-size: 0.95rem !important;
+  }
+
+  .role-card svg {
+    width: 32px !important;
+    height: 32px !important;
   }
 
   .section-title {
-    font-size: 2.2rem;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    margin-bottom: 25px;
   }
 
-  .work-grid, .toolkit-grid {
+  .work-grid {
+    gap: 25px;
     grid-template-columns: 1fr;
   }
-  
+
+  .project-card {
+    border-radius: 12px;
+  }
+
+  .project-card img {
+    height: 200px !important;
+  }
+
+  .project-card div {
+    padding: 20px !important;
+  }
+
+  .project-card h3 {
+    font-size: 1.3rem !important;
+  }
+
+  .project-card p {
+    font-size: 0.9rem !important;
+  }
+
+  .toolkit-grid {
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+
+  .toolkit-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .toolkit-card h3 {
+    font-size: 1.15rem !important;
+  }
+
+  .toolkit-card p {
+    font-size: 0.88rem !important;
+  }
+
   #work, #toolkit, #contact {
-    padding: 60px 20px;
+    padding: 40px 16px;
+  }
+
+  footer h2 {
+    font-size: 1.8rem !important;
+  }
+
+  footer p {
+    font-size: 0.9rem !important;
+    margin-bottom: 25px !important;
+  }
+
+  footer div {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px !important;
+  }
+
+  footer .btn-social {
+    width: 100%;
+    padding: 14px 20px !important;
+    font-size: 1rem !important;
   }
 }
 
