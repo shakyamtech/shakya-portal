@@ -57,7 +57,7 @@ function App() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       {/* Navigation */}
-      <nav className="glass-panel nav-container">
+      <nav className="glass-panel nav-container animate-slide-down">
         <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent)' }}>Mahesh <span style={{color: 'white'}}>Shakya</span></h1>
         <div className="nav-links">
           <a href="#about">About</a>
@@ -69,9 +69,9 @@ function App() {
 
       {/* Hero Section */}
       <main className="hero-section">
-        <div className="animate-fade-up hero-content-wrapper">
+        <div className="hero-content-wrapper">
           
-          <div className="hero-text">
+          <div className="hero-text animate-premium-fade-up" style={{ animationDelay: '0.1s' }}>
             <h2 style={{ fontSize: '1.2rem', color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '15px' }}>Hello, I am Mahesh Shakya</h2>
             <h1 className="hero-title">
               I craft experiences as a <br/>
@@ -99,7 +99,7 @@ function App() {
             </div>
           </div>
 
-          <div className="hero-image-wrapper">
+          <div className="hero-image-wrapper animate-scale-in" style={{ animationDelay: '0.3s' }}>
             <div className="glass-panel hero-image-container">
               <div className="hero-image-crop">
                 <img src="/images/profile_avatar.jpg" alt="Mahesh Shakya Avatar" className="hero-image" />
@@ -109,9 +109,18 @@ function App() {
         </div>
 
         {/* Roles Grid */}
-        <div className="animate-fade-up delay-2 roles-grid">
+        <div className="roles-grid">
           {rolesData.map((role, idx) => (
-            <div key={idx} className="glass-panel role-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div 
+              key={idx} 
+              className="glass-panel role-card animate-stagger-fade-up" 
+              style={{ 
+                display: 'flex', 
+                flexDirection: 'column', 
+                alignItems: 'center',
+                animationDelay: `${0.5 + idx * 0.1}s`
+              }}
+            >
               <div style={{ color: 'var(--accent)', marginBottom: '15px' }}>
                 {role.icon}
               </div>
@@ -129,7 +138,7 @@ function App() {
           <div className="work-grid">
             
             {/* Project 1 */}
-            <div className="glass-panel project-card" style={{ overflow: 'hidden', transition: 'all 0.3s', display: 'flex', flexDirection: 'column' }}>
+            <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <img src="/images/project_web.png" alt="Premium Restaurant System" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
               <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Web App</span>
@@ -140,7 +149,7 @@ function App() {
             </div>
 
             {/* Project 2 */}
-            <div className="glass-panel project-card" style={{ overflow: 'hidden', transition: 'all 0.3s', display: 'flex', flexDirection: 'column' }}>
+            <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <img src="/images/project_app.png" alt="Hamro Sabzi Mobile App" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
               <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Mobile App</span>
@@ -151,7 +160,7 @@ function App() {
             </div>
 
             {/* Project 3 */}
-            <div className="glass-panel project-card" style={{ overflow: 'hidden', transition: 'all 0.3s', display: 'flex', flexDirection: 'column' }}>
+            <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <img src="/images/project_design.png" alt="M Silverlight" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
               <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Business Website</span>

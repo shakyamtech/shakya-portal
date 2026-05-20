@@ -5,9 +5,12 @@
   --bg-secondary: #141414;
   --bg-card: #1F1F1F;
   --accent: #D4AF37;
-  --accent-glow: rgba(212, 175, 55, 0.3);
+  --accent-glow: rgba(212, 175, 55, 0.35);
   --text-primary: #FFFFFF;
   --text-secondary: #A0A0A0;
+  --transition-premium: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-card: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-btn: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
@@ -35,6 +38,7 @@ body {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 16px;
+  transition: var(--transition-card);
 }
 
 .gradient-text {
@@ -51,16 +55,17 @@ body {
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: var(--transition-btn);
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 15px var(--accent-glow);
   display: inline-block;
+  will-change: transform, box-shadow;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6), 0 0 15px rgba(212, 175, 55, 0.3);
 }
 
 .btn-secondary {
@@ -70,39 +75,113 @@ body {
   cursor: pointer;
   font-weight: 600;
   background: transparent;
-  transition: all 0.3s;
+  transition: var(--transition-btn);
   text-decoration: none;
   border-radius: 30px;
   display: inline-block;
+  will-change: transform, background-color, border-color;
 }
 
 .btn-secondary:hover {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.project-card {
+  transition: var(--transition-card);
+  will-change: transform, box-shadow, border-color;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-  border-color: rgba(212, 175, 55, 0.3) !important;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px var(--accent-glow);
+  border-color: rgba(212, 175, 55, 0.45) !important;
+}
+
+.project-card img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .project-card:hover img {
-  opacity: 0.9;
+  transform: scale(1.06);
+  opacity: 0.95;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Premium Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes premiumFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88) rotate(-2deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes staggerFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  opacity: 0;
+  animation: slideDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-premium-fade-up {
+  opacity: 0;
+  animation: premiumFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  opacity: 0;
+  animation: scaleIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-stagger-fade-up {
+  opacity: 0;
+  animation: staggerFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-fade-up {
-  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation: premiumFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.delay-1 { animation-delay: 0.2s; opacity: 0; }
-.delay-2 { animation-delay: 0.4s; opacity: 0; }
-.delay-3 { animation-delay: 0.6s; opacity: 0; }
+.delay-1 { animation-delay: 0.15s; opacity: 0; }
+.delay-2 { animation-delay: 0.3s; opacity: 0; }
+.delay-3 { animation-delay: 0.45s; opacity: 0; }
 
 /* --- Responsive Layout Classes --- */
 
@@ -127,11 +206,31 @@ body {
   color: var(--text-secondary);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s;
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  padding: 4px 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-links a:hover {
   color: var(--text-primary);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 /* Hero Section */
@@ -239,13 +338,15 @@ body {
 .role-card {
   padding: 35px 20px;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: var(--transition-card);
+  will-change: transform, box-shadow, border-color;
   cursor: pointer;
 }
 
 .role-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+  transform: translateY(-8px) scale(1.04);
+  border-color: rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.12), 0 0 15px rgba(212, 175, 55, 0.05);
 }
 
 /* Section Headings */
@@ -277,13 +378,14 @@ body {
   flex-direction: column;
   gap: 20px;
   height: 100%;
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: var(--transition-card);
+  will-change: transform, box-shadow, border-color;
 }
 
 .toolkit-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(212, 175, 55, 0.25) !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-8px) scale(1.03);
+  border-color: rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.15);
 }
 
 /* Mobile Responsiveness */
@@ -361,9 +463,10 @@ body {
   font-size: 1rem;
   text-decoration: none;
   color: white;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: var(--transition-btn);
   position: relative;
   z-index: 1;
+  will-change: transform, box-shadow;
 }
 
 .btn-whatsapp {
