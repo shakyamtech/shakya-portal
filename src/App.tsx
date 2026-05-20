@@ -262,8 +262,8 @@ function App() {
       <section id="toolkit" style={{ padding: '100px 20px', background: 'var(--bg-primary)', borderTop: '1px solid rgba(255,255,255,0.02)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 className="section-title"><span className="gradient-text">The Creative Toolkit</span></h2>
-          <p style={{ color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '600px', margin: '-30px auto 60px auto', lineHeight: 1.6, fontSize: '1.1rem' }}>
-            Operating state-of-the-art capture gear and stabilized systems to elevate visual storytelling and physical production.
+          <p style={{ color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '640px', margin: '-30px auto 60px auto', lineHeight: 1.7, fontSize: '1.1rem' }}>
+            A seasoned professional with hands-on expertise across every tool in this stack — ready to bring your vision to life.
           </p>
           <div className="toolkit-grid">
             {gearData.map((gear, idx) => (
