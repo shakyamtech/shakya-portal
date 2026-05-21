@@ -52,7 +52,7 @@ export const translations = {
         mobileApp: "Mobile App",
         businessWebsite: "Business Website",
         jewellerySystem: "Jewellery System",
-        lmsSystem: "EdTech Platform"
+        lmsSystem: "Edu-Tech Platform"
       },
       btnViewApp: "View Live App",
       btnViewMobileApp: "View App",
