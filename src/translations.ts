@@ -51,7 +51,8 @@ export const translations = {
         webApp: "Web App",
         mobileApp: "Mobile App",
         businessWebsite: "Business Website",
-        jewellerySystem: "Jewellery System"
+        jewellerySystem: "Jewellery System",
+        lmsSystem: "EdTech Platform"
       },
       btnViewApp: "View Live App",
       btnViewMobileApp: "View App",
@@ -72,6 +73,10 @@ export const translations = {
         p4: {
           title: "Shree Krishna Jyasa Pasa",
           desc: "A comprehensive jewellery management system featuring automatic gold/silver price updates, automated billing, inventory tracking, and full management of suppliers, customers, and credits."
+        },
+        p5: {
+          title: "NextGen Learning Management System",
+          desc: "A multi-platform web application optimized for Apple, Android, and Windows devices. It features real-time course tracking, interactive assignments, cross-device syncing, and an intuitive dashboard that revolutionizes the e-learning experience."
         }
       }
     },
@@ -154,7 +159,8 @@ export const translations = {
         webApp: "वेब एप",
         mobileApp: "मोबाइल एप",
         businessWebsite: "व्यावसायिक वेबसाइट",
-        jewellerySystem: "गहना प्रणाली"
+        jewellerySystem: "गहना प्रणाली",
+        lmsSystem: "शैक्षिक प्रविधि"
       },
       btnViewApp: "लाइभ एप हेर्नुहोस्",
       btnViewMobileApp: "एप हेर्नुहोस्",
@@ -170,11 +176,15 @@ export const translations = {
         },
         p3: {
           title: "एम सिल्भरलाइट",
-          desc: "मेरो कार्यालयको लागि आधिकारिक वेबसाइट र डिजिटल उपस्थिति, जसले व्यावसायिक वेब डिजाइन र विकास प्रदर्शन गर्दछ।"
+          desc: "मेरो कार्यालयको लागि आधिकारिक वेबसाइटমঙ্গল र डिजिटल उपस्थिति, जसले व्यावसायिक वेब डिजाइन र विकास प्रदर्शन गर्दछ।"
         },
         p4: {
           title: "श्री कृष्ण ज्यासा पासा",
           desc: "स्वचालित सुन/चाँदी मूल्य अपडेट, स्वचालित बिलिङ, स्टक ट्र्याकिङ, र आपूर्तिकर्ता, ग्राहकहरू र क्रेडिटहरूको पूर्ण व्यवस्थापन सहितको विस्तृत गहना व्यवस्थापन प्रणाली।"
+        },
+        p5: {
+          title: "नेक्स्टजेन लर्निङ म्यानेजमेन्ट सिस्टम (LMS)",
+          desc: "एप्पल, एन्ड्रोइड, र विन्डोज उपकरणहरूको लागि अनुकूलित एक बहु-प्लेटफर्म वेब अनुप्रयोग। यसमा वास्तविक-समय पाठ्यक्रम ट्र्याकिङ, अन्तरक्रियात्मक असाइनमेन्टहरू, क्रस-डिभाइस सिंक, र ई-लर्निङ अनुभवलाई क्रान्तिकारी बनाउने सहज ड्यासबोर्ड समावेश छ।"
         }
       }
     },
