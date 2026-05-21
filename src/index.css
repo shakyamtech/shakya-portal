@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;800&family=Outfit:wght@300;400;600;800&display=swap');
 
 :root {
   --bg-primary: #0D0D0D;
@@ -1001,5 +1001,78 @@ html {
     width: 42px;
     height: 42px;
   }
+}
+
+/* --- Language Toggle --- */
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-divider {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+  color: var(--text-primary);
+}
+
+.lang-btn.active {
+  color: #000;
+  background: var(--accent);
+}
+
+@media (max-width: 1024px) {
+  .nav-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .nav-center {
+    order: 3;
+    width: 100%;
+    margin-top: 15px;
+    justify-content: space-around;
+  }
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+}
+
+/* --- Nepali Font Override --- */
+.lang-nep,
+.lang-nep * {
+  font-family: 'Mukta', sans-serif !important;
+}
+
+.lang-nep .hero-title {
+  line-height: 1.4; /* Mukta needs a bit more line height for complex characters */
 }
 
