@@ -87,6 +87,10 @@ export const translations = {
         p7: {
           title: "Lyka Nepal",
           desc: "A premium online clothing and womenswear e-commerce store integrated with physical store support, POS billing, real-time stock management, and detailed sales reporting."
+        },
+        p8: {
+          title: "The Meatly",
+          desc: "A premium online meat shop and cold store manager for Lalitpur. It offers fresh chicken, mutton, buff, and pork delivered to your doorstep with integrated eSewa, Khalti, and bank transfer payments."
         }
       }
     },
@@ -205,6 +209,10 @@ export const translations = {
         p7: {
           title: "लाइका नेपाल (Lyka Nepal)",
           desc: "महिलाहरूको आधुनिक पहिरनका लागि अनलाइन अर्डर, भौतिक स्टोर व्यवस्थापन, पिओएस बिलिङ, वास्तविक-समय स्टक नियन्त्रण, र विस्तृत बिक्री रिपोर्ट सहितको उत्कृष्ट ई-कमर्स प्रणाली।"
+        },
+        p8: {
+          title: "द मिट्ली (The Meatly)",
+          desc: "ललितपुरमा आधारित प्रिमियम अनलाइन मासु पसल र कोल्ड स्टोर व्यवस्थापक। ग्राहकहरूका लागि ताजा कुखुरा, खसी, राँगा र बँगुरको मासु होम डेलिभरीका साथै इसेवा, खल्ती र बैंक ट्रान्सफर भुक्तानी एकीकृत गरिएको छ।"
         }
       }
     },

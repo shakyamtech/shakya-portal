@@ -502,6 +502,17 @@ function App() {
 
             {/* Project 6 */}
             <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <img src="/images/project_themeatly.png" alt="The Meatly" loading="lazy" width="800" height="250" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
+              <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>{t.work.tags.ecommercePOS}</span>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '10px 0', color: 'var(--text-primary)' }}>{t.work.projects.p8.title}</h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, flex: 1 }}>{t.work.projects.p8.desc}</p>
+                <a href="https://delicious-meat-shop.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '20px', fontSize: '0.95rem', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={e => e.currentTarget.style.color = 'var(--text-primary)'}>{t.work.btnViewApp} <span style={{ color: 'var(--accent)' }}>↗</span></a>
+              </div>
+            </div>
+
+            {/* Project 7 */}
+            <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <img src="/images/project_lms.png" alt="NextGen LMS" loading="lazy" width="800" height="250" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
               <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>{t.work.tags.lmsSystem}</span>
@@ -511,7 +522,7 @@ function App() {
               </div>
             </div>
 
-            {/* Project 7 */}
+            {/* Project 8 */}
             <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <img src="/images/project_khataplus.png" alt="KhataPlus" loading="lazy" width="800" height="250" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
               <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
