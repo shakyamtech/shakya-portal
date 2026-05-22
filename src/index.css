@@ -32,6 +32,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+p {
+  text-align: justify;
+  hyphens: auto;
+}
+
 /* Base Classes */
 .glass-panel {
   background: rgba(31, 31, 31, 0.4);
