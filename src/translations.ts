@@ -53,7 +53,8 @@ export const translations = {
         businessWebsite: "Business Website",
         jewellerySystem: "Jewellery System",
         lmsSystem: "Edu-Tech Platform",
-        accountingSoftware: "Accounting Software"
+        accountingSoftware: "Accounting Software",
+        ecommercePOS: "E-Commerce & POS"
       },
       btnViewApp: "View Live App",
       btnViewMobileApp: "View App",
@@ -82,6 +83,10 @@ export const translations = {
         p6: {
           title: "KhataPlus",
           desc: "A comprehensive accounting software suitable for all sectors including Education, Consultancies, Pharmacies, Clinics, Hardware, Studios, Clothing, Foods, Dairy, Construction, and Electronics. It features full daily transaction recording, bookkeeping, stock maintenance, asset & liability management, daybook, journal, final accounts, balance sheets, and P&L statements."
+        },
+        p7: {
+          title: "Lyka Nepal",
+          desc: "A premium online clothing and womenswear e-commerce store integrated with physical store support, POS billing, real-time stock management, and detailed sales reporting."
         }
       }
     },
@@ -166,7 +171,8 @@ export const translations = {
         businessWebsite: "व्यावसायिक वेबसाइट",
         jewellerySystem: "गहना प्रणाली",
         lmsSystem: "शैक्षिक प्रविधि",
-        accountingSoftware: "लेखा सफ्टवेयर"
+        accountingSoftware: "लेखा सफ्टवेयर",
+        ecommercePOS: "ई-कमर्स र पिओएस प्रणाली"
       },
       btnViewApp: "लाइभ एप हेर्नुहोस्",
       btnViewMobileApp: "एप हेर्नुहोस्",
@@ -195,6 +201,10 @@ export const translations = {
         p6: {
           title: "खाताप्लस",
           desc: "सबै क्षेत्रहरू (शिक्षा, कन्सल्टेन्सी, फार्मेसी, क्लिनिक, हार्डवेयर, स्टुडियो, कपडा, खाद्य, डेरी, निर्माण, र इलेक्ट्रोनिक्स) को लागि उपयुक्त एक विस्तृत लेखा सफ्टवेयर। यसमा पूर्ण दैनिक कारोबार रेकर्डिङ, बुककिपिङ, स्टक मर्मत, सम्पत्ति र दायित्व व्यवस्थापन, डेबुक, जर्नल, अन्तिम खाता, वासलात, र नाफा-नोक्सान विवरण समावेश छ।"
+        },
+        p7: {
+          title: "लाइका नेपाल (Lyka Nepal)",
+          desc: "महिलाहरूको आधुनिक पहिरनका लागि अनलाइन अर्डर, भौतिक स्टोर व्यवस्थापन, पिओएस बिलिङ, वास्तविक-समय स्टक नियन्त्रण, र विस्तृत बिक्री रिपोर्ट सहितको उत्कृष्ट ई-कमर्स प्रणाली।"
         }
       }
     },

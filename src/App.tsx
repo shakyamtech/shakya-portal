@@ -68,14 +68,35 @@ function App() {
 
   useEffect(() => {
     const startTime = Date.now();
-    const duration = 1800; // 1.8 seconds premium preload duration
-    
+    const MIN_DURATION = 600; // minimum aesthetic display time (ms)
+    let pageReady = false;
+    let intervalDone = false;
+
+    const finish = () => {
+      if (!pageReady || !intervalDone) return;
+      setIsExiting(true);
+      setTimeout(() => setIsLoaded(true), 400);
+      setTimeout(() => setLoading(false), 900);
+    };
+
+    // Listen for the page to fully load (images + all resources)
+    const onLoad = () => {
+      pageReady = true;
+      finish();
+    };
+    if (document.readyState === 'complete') {
+      pageReady = true;
+    } else {
+      window.addEventListener('load', onLoad);
+    }
+
+    // Animate progress over MIN_DURATION, then signal interval done
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
-      const progressPercent = Math.min(Math.floor((elapsed / duration) * 100), 100);
-      
+      const progressPercent = Math.min(Math.floor((elapsed / MIN_DURATION) * 100), 100);
+
       setProgress(progressPercent);
-      
+
       if (progressPercent < 30) {
         setPreloaderStage(1);
       } else if (progressPercent < 60) {
@@ -85,20 +106,18 @@ function App() {
       } else {
         setPreloaderStage(4);
       }
-      
-      if (elapsed >= duration) {
+
+      if (elapsed >= MIN_DURATION) {
         clearInterval(interval);
-        setIsExiting(true);
-        setTimeout(() => {
-          setIsLoaded(true);
-        }, 400);
-        setTimeout(() => {
-          setLoading(false);
-        }, 900);
+        intervalDone = true;
+        finish();
       }
     }, 30);
-    
-    return () => clearInterval(interval);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('load', onLoad);
+    };
   }, []);
 
   useEffect(() => {
@@ -428,7 +447,7 @@ function App() {
             
             {/* Project 1 */}
             <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-              <img src="/images/project_web.png" alt="Premium Restaurant System" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
+              <img src="/images/project_web.png" alt="Premium Restaurant System" loading="lazy" width="800" height="250" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
               <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>{t.work.tags.webApp}</span>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '10px 0', color: 'var(--text-primary)' }}>{t.work.projects.p1.title}</h3>
@@ -439,7 +458,7 @@ function App() {
 
             {/* Project 2 */}
             <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-              <img src="/images/project_app.png" alt="Hamro Sabzi Mobile App" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
+              <img src="/images/project_app.png" alt="Hamro Sabzi Mobile App" loading="lazy" width="800" height="250" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
               <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>{t.work.tags.mobileApp}</span>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '10px 0', color: 'var(--text-primary)' }}>{t.work.projects.p2.title}</h3>
@@ -450,7 +469,7 @@ function App() {
 
             {/* Project 3 */}
             <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-              <img src="/images/project_design.png" alt="M Silverlight" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
+              <img src="/images/project_design.png" alt="M Silverlight" loading="lazy" width="800" height="250" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
               <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>{t.work.tags.businessWebsite}</span>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '10px 0', color: 'var(--text-primary)' }}>{t.work.projects.p3.title}</h3>
@@ -461,7 +480,7 @@ function App() {
 
             {/* Project 4 */}
             <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-              <img src="/images/project_shreekrishna.png" alt="Shree Krishna Jyasa Pasa" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
+              <img src="/images/project_shreekrishna.png" alt="Shree Krishna Jyasa Pasa" loading="lazy" width="800" height="250" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
               <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>{t.work.tags.jewellerySystem}</span>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '10px 0', color: 'var(--text-primary)' }}>{t.work.projects.p4.title}</h3>
@@ -472,7 +491,18 @@ function App() {
 
             {/* Project 5 */}
             <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-              <img src="/images/project_lms.png" alt="NextGen LMS" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
+              <img src="/images/project_lyka.png" alt="Lyka Nepal" loading="lazy" width="800" height="250" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
+              <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>{t.work.tags.ecommercePOS}</span>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '10px 0', color: 'var(--text-primary)' }}>{t.work.projects.p7.title}</h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, flex: 1 }}>{t.work.projects.p7.desc}</p>
+                <a href="https://lyka-nepal.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '20px', fontSize: '0.95rem', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={e => e.currentTarget.style.color = 'var(--text-primary)'}>{t.work.btnViewApp} <span style={{ color: 'var(--accent)' }}>↗</span></a>
+              </div>
+            </div>
+
+            {/* Project 6 */}
+            <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <img src="/images/project_lms.png" alt="NextGen LMS" loading="lazy" width="800" height="250" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
               <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>{t.work.tags.lmsSystem}</span>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '10px 0', color: 'var(--text-primary)' }}>{t.work.projects.p5.title}</h3>
@@ -481,9 +511,9 @@ function App() {
               </div>
             </div>
 
-            {/* Project 6 */}
+            {/* Project 7 */}
             <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-              <img src="/images/project_khataplus.png" alt="KhataPlus" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
+              <img src="/images/project_khataplus.png" alt="KhataPlus" loading="lazy" width="800" height="250" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
               <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>{t.work.tags.accountingSoftware}</span>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '10px 0', color: 'var(--text-primary)' }}>{t.work.projects.p6.title}</h3>
