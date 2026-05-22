@@ -481,6 +481,17 @@ function App() {
               </div>
             </div>
 
+            {/* Project 6 */}
+            <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <img src="/images/project_khataplus.png" alt="KhataPlus" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
+              <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>{t.work.tags.accountingSoftware}</span>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '10px 0', color: 'var(--text-primary)' }}>{t.work.projects.p6.title}</h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, flex: 1 }}>{t.work.projects.p6.desc}</p>
+                <a href="#" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '20px', fontSize: '0.95rem', transition: 'color 0.3s', pointerEvents: 'none', opacity: 0.7 }}>In Development <span style={{ color: 'var(--text-secondary)' }}>↗</span></a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

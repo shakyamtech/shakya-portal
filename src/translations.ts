@@ -52,7 +52,8 @@ export const translations = {
         mobileApp: "Mobile App",
         businessWebsite: "Business Website",
         jewellerySystem: "Jewellery System",
-        lmsSystem: "Edu-Tech Platform"
+        lmsSystem: "Edu-Tech Platform",
+        accountingSoftware: "Accounting Software"
       },
       btnViewApp: "View Live App",
       btnViewMobileApp: "View App",
@@ -77,6 +78,10 @@ export const translations = {
         p5: {
           title: "NextGen Learning Management System",
           desc: "A multi-platform web application optimized for Apple, Android, and Windows devices. It features real-time course tracking, interactive assignments, cross-device syncing, and an intuitive dashboard that revolutionizes the e-learning experience."
+        },
+        p6: {
+          title: "KhataPlus",
+          desc: "A comprehensive accounting software suitable for all sectors including Education, Consultancies, Pharmacies, Clinics, Hardware, Studios, Clothing, Foods, Dairy, Construction, and Electronics. It features full daily transaction recording, bookkeeping, stock maintenance, asset & liability management, daybook, journal, final accounts, balance sheets, and P&L statements."
         }
       }
     },
@@ -160,7 +165,8 @@ export const translations = {
         mobileApp: "मोबाइल एप",
         businessWebsite: "व्यावसायिक वेबसाइट",
         jewellerySystem: "गहना प्रणाली",
-        lmsSystem: "शैक्षिक प्रविधि"
+        lmsSystem: "शैक्षिक प्रविधि",
+        accountingSoftware: "लेखा सफ्टवेयर"
       },
       btnViewApp: "लाइभ एप हेर्नुहोस्",
       btnViewMobileApp: "एप हेर्नुहोस्",
@@ -185,6 +191,10 @@ export const translations = {
         p5: {
           title: "नेक्स्टजेन लर्निङ म्यानेजमेन्ट सिस्टम (LMS)",
           desc: "एप्पल, एन्ड्रोइड, र विन्डोज उपकरणहरूको लागि अनुकूलित एक बहु-प्लेटफर्म वेब अनुप्रयोग। यसमा वास्तविक-समय पाठ्यक्रम ट्र्याकिङ, अन्तरक्रियात्मक असाइनमेन्टहरू, क्रस-डिभाइस सिंक, र ई-लर्निङ अनुभवलाई क्रान्तिकारी बनाउने सहज ड्यासबोर्ड समावेश छ।"
+        },
+        p6: {
+          title: "खाताप्लस",
+          desc: "सबै क्षेत्रहरू (शिक्षा, कन्सल्टेन्सी, फार्मेसी, क्लिनिक, हार्डवेयर, स्टुडियो, कपडा, खाद्य, डेरी, निर्माण, र इलेक्ट्रोनिक्स) को लागि उपयुक्त एक विस्तृत लेखा सफ्टवेयर। यसमा पूर्ण दैनिक कारोबार रेकर्डिङ, बुककिपिङ, स्टक मर्मत, सम्पत्ति र दायित्व व्यवस्थापन, डेबुक, जर्नल, अन्तिम खाता, वासलात, र नाफा-नोक्सान विवरण समावेश छ।"
         }
       }
     },
