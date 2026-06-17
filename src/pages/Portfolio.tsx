@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { Globe, Smartphone, Palette, Calculator, Video, Camera, Aperture, Navigation, Sliders } from 'lucide-react';
 import { FaWhatsapp, FaFacebookMessenger, FaGithub, FaPhone } from 'react-icons/fa6';
 import './index.css';
-import { translations } from './translations';
-import type { Language } from './translations';
+import { translations } from '../translations';
+import type { Language } from '../translations';
 
 function App() {
   const [lang, setLang] = useState<Language>('ENG');
