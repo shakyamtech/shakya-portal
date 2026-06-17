@@ -447,7 +447,7 @@ function App() {
 
             {/* Project 9: Nepali Typeshala */}
             <div className="glass-panel project-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-              <img src="/images/project_web.png" alt="Nepali Typeshala" loading="lazy" width="800" height="250" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
+              <img src="/images/project_typeshala.png" alt="Nepali Typeshala" loading="lazy" width="800" height="250" style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
               <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>{t.work.tags.webApp}</span>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '10px 0', color: 'var(--text-primary)' }}>{t.work.projects.p9.title}</h3>
