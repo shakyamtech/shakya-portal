@@ -91,6 +91,10 @@ export const translations = {
         p8: {
           title: "The Meatly",
           desc: "A premium online meat shop and cold store manager for Lalitpur. It offers fresh chicken, mutton, buff, and pork delivered to your doorstep with integrated eSewa, Khalti, and bank transfer payments."
+        },
+        p9: {
+          title: "Nepali Typeshala",
+          desc: "The best typing practice web app specifically designed for Nepali typing learners."
         }
       }
     },
@@ -213,6 +217,10 @@ export const translations = {
         p8: {
           title: "द मिट्ली (The Meatly)",
           desc: "ललितपुरमा आधारित प्रिमियम अनलाइन मासु पसल र कोल्ड स्टोर व्यवस्थापक। ग्राहकहरूका लागि ताजा कुखुरा, खसी, राँगा र बँगुरको मासु होम डेलिभरीका साथै इसेवा, खल्ती र बैंक ट्रान्सफर भुक्तानी एकीकृत गरिएको छ।"
+        },
+        p9: {
+          title: "नेपाली टाइपशाला (Nepali Typeshala)",
+          desc: "नेपाली टाइपिङ सिक्नेहरूका लागि उत्कृष्ट टाइपिङ अभ्यास एप।"
         }
       }
     },
