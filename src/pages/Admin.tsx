@@ -309,7 +309,10 @@ const Admin = () => {
         }}
       >
         <div style={{ marginBottom: '50px', textAlign: 'center', marginTop: '20px' }}>
-          <h2 style={{ color: 'white', fontSize: '1.5rem', fontWeight: 800 }}>Admin <span style={{ color: 'var(--accent)' }}>CMS</span></h2>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
+            <img src="/logo_v2.png" alt="Mahesh Shakya Logo" style={{ height: '35px', width: 'auto', objectFit: 'contain' }} />
+            <h2 style={{ color: 'white', fontSize: '1.5rem', fontWeight: 800 }}>Admin <span style={{ color: 'var(--accent)' }}>CMS</span></h2>
+          </div>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Portfolio Management</p>
         </div>
 
