@@ -497,6 +497,26 @@ p {
   border-radius: 50%;
   background: linear-gradient(145deg, rgba(31,31,31,0.6), rgba(13,13,13,0.8));
   animation: float 6s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent 0%, transparent 60%, #ff007f 70%, #d4af37 80%, #00f2fe 90%, transparent 100%);
+  animation: rotateGalaxyEdge 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.hero-image-container:hover::before {
+  opacity: 1;
 }
 
 .hero-image-crop {
@@ -507,6 +527,9 @@ p {
   box-shadow: 0 0 40px var(--accent-glow);
   overflow: hidden;
   animation: pulseGlow 4s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+  background: #000;
 }
 
 .hero-image {
