@@ -244,6 +244,24 @@ p {
   width: max-content;
 }
 
+/* Footer Links Animation */
+.footer-link {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+  transform: translateX(8px);
+}
+
 .btn-read-more {
   background: transparent;
   color: var(--text-primary);

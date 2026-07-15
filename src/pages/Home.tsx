@@ -588,9 +588,9 @@ function Home() {
           <div style={{ flex: '1 1 200px' }}>
             <h4 style={{ color: '#fff', fontWeight: 600, marginBottom: '20px', fontSize: '1.1rem' }}>Quick Links</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <button onClick={() => scrollToSection('home')} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', textAlign: 'left', cursor: 'pointer', fontSize: '0.95rem', padding: 0, transition: 'color 0.3s ease' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>Home</button>
-              <button onClick={() => scrollToSection('skills')} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', textAlign: 'left', cursor: 'pointer', fontSize: '0.95rem', padding: 0, transition: 'color 0.3s ease' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>Skills</button>
-              <button onClick={() => scrollToSection('work')} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', textAlign: 'left', cursor: 'pointer', fontSize: '0.95rem', padding: 0, transition: 'color 0.3s ease' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>Work</button>
+              <button onClick={() => scrollToSection('home')} className="footer-link">Home</button>
+              <button onClick={() => scrollToSection('skills')} className="footer-link">Skills</button>
+              <button onClick={() => scrollToSection('work')} className="footer-link">Work</button>
             </div>
           </div>
         </div>
