@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;800&family=Outfit:wght@300;400;600;800&family=Yantramanav:wght@300;400;500;700;900&display=swap');
 
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 :root {
   --bg-primary: #0D0D0D;
   --bg-secondary: #141414;
