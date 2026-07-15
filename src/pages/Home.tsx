@@ -544,7 +544,7 @@ function Home() {
       </section>
 
       {/* Contact Section */}
-      <footer id="contact" className="reveal-element" style={{ padding: '80px 20px', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', background: 'var(--bg-primary)' }}>
+      <section id="contact" className="reveal-element" style={{ padding: '60px 20px 20px', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', background: 'var(--bg-primary)' }}>
         <h2 className="section-title" style={{ marginBottom: '20px' }}>{t.contact.titlePrefix} <span className="gradient-text">{t.contact.titleHighlight}</span></h2>
         <p style={{ color: 'var(--text-secondary)', maxWidth: '500px', margin: '0 auto 40px auto', lineHeight: 1.6 }}>
           {t.contact.subtitle}
@@ -563,9 +563,46 @@ function Home() {
             <FaPhone size={24} /> Call
           </a>
         </div>
-        <p style={{ color: 'var(--text-secondary)', marginTop: '60px', fontSize: '0.9rem' }}>
-          © {new Date().getFullYear()} {t.contact.copyright}
-        </p>
+      </section>
+
+      {/* Premium Footer */}
+      <footer style={{ 
+        background: 'linear-gradient(to bottom, var(--bg-primary) 0%, #080808 100%)', 
+        padding: '30px 20px 30px', 
+        position: 'relative', 
+        borderTop: '1px solid rgba(255,255,255,0.03)' 
+      }}>
+        {/* Glowing Top Line */}
+        <div style={{ position: 'absolute', top: 0, left: '20%', right: '20%', height: '1px', background: 'linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent)' }}></div>
+        
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '40px', justifyContent: 'space-between', marginBottom: '40px' }}>
+          <div style={{ flex: '1 1 300px' }}>
+            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#fff', marginBottom: '15px', letterSpacing: '-0.5px' }}>
+              Mahesh <span style={{ color: 'var(--accent)' }}>Shakya</span>
+            </h3>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem', maxWidth: '350px' }}>
+              Building premium digital experiences, robust backends, and stunning user interfaces from Nepal.
+            </p>
+          </div>
+
+          <div style={{ flex: '1 1 200px' }}>
+            <h4 style={{ color: '#fff', fontWeight: 600, marginBottom: '20px', fontSize: '1.1rem' }}>Quick Links</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <button onClick={() => scrollToSection('home')} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', textAlign: 'left', cursor: 'pointer', fontSize: '0.95rem', padding: 0, transition: 'color 0.3s ease' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>Home</button>
+              <button onClick={() => scrollToSection('skills')} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', textAlign: 'left', cursor: 'pointer', fontSize: '0.95rem', padding: 0, transition: 'color 0.3s ease' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>Skills</button>
+              <button onClick={() => scrollToSection('work')} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', textAlign: 'left', cursor: 'pointer', fontSize: '0.95rem', padding: 0, transition: 'color 0.3s ease' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>Work</button>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ maxWidth: '1200px', margin: '0 auto', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '25px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
+          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', margin: 0 }}>
+            © {new Date().getFullYear()} {t.contact.copyright}
+          </p>
+          <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', display: 'flex', gap: '15px' }}>
+            <span>Crafted with passion in Nepal 🇳🇵</span>
+          </div>
+        </div>
       </footer>
 
       {/* Floating Back to Top Button */}
