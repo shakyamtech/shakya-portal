@@ -478,7 +478,7 @@ function Home() {
                     <span style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>{project.tag}</span>
                     <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '10px 0', color: 'var(--text-primary)' }}>{project.title}</h3>
                     <p className="line-clamp-3" style={{ color: 'var(--text-secondary)', lineHeight: 1.6, flex: 1 }}>{project.description}</p>
-                    <div style={{ display: 'flex', gap: '20px', marginTop: '20px', alignItems: 'center' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px', alignItems: 'center' }}>
                       <Link to={`/project/${project.id}`} style={{ color: 'var(--text-primary)', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '0.95rem', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={e => e.currentTarget.style.color = 'var(--text-primary)'}>Read More <span style={{ color: 'var(--accent)' }}>→</span></Link>
                       <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '0.9rem', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={e => e.currentTarget.style.color = 'var(--text-secondary)'}>{t.work.btnViewApp} <span>↗</span></a>
                     </div>
