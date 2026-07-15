@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../lib/firebase';
-import { Globe, Smartphone, Palette, Calculator, Video, Camera, Aperture, Navigation, Sliders } from 'lucide-react';
+import { Globe, Smartphone, Palette, Calculator, Video, Camera, Aperture, Navigation, Sliders, MonitorPlay } from 'lucide-react';
 import { FaWhatsapp, FaFacebookMessenger, FaGithub, FaPhone } from 'react-icons/fa6';
 import '../index.css';
 import { translations } from '../translations';
@@ -17,7 +17,9 @@ function Home() {
     { name: t.roles.appsDeveloper, icon: <Smartphone size={40} strokeWidth={1.5} /> },
     { name: t.roles.graphicDesigner, icon: <Palette size={40} strokeWidth={1.5} /> },
     { name: t.roles.accountBookKeeper, icon: <Calculator size={40} strokeWidth={1.5} /> },
-    { name: t.roles.videoEditor, icon: <Video size={40} strokeWidth={1.5} /> }
+    { name: t.roles.videoEditor, icon: <Video size={40} strokeWidth={1.5} /> },
+    { name: t.roles.photographer, icon: <Camera size={40} strokeWidth={1.5} /> },
+    { name: t.roles.instructor, icon: <MonitorPlay size={40} strokeWidth={1.5} /> }
   ];
 
   const gearData = [
@@ -580,8 +582,11 @@ function Home() {
             <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#fff', marginBottom: '15px', letterSpacing: '-0.5px' }}>
               Mahesh <span style={{ color: 'var(--accent)' }}>Shakya</span>
             </h3>
-            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem', maxWidth: '350px' }}>
-              Building premium digital experiences, robust backends, and stunning user interfaces from Nepal.
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem', maxWidth: '400px' }}>
+              {t.footer.description}
+            </p>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '0.95rem', maxWidth: '400px', marginTop: '15px' }}>
+              {t.footer.seoText}
             </p>
           </div>
 

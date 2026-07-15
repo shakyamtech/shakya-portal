@@ -20,6 +20,13 @@ export const translations = {
       greeting: "Hello, I am Mahesh Shakya",
       prefix: "I craft experiences as a",
       subtitle: "A multidisciplinary professional bridging the gap between design, development, business accounts, and visual storytelling.",
+      seoTags: [
+        "📍 Lalitpur, Kathmandu, Bhaktapur & All Nepal",
+        "💻 Web & Mobile Apps",
+        "🎨 Graphic Design",
+        "🎥 Video & Photography",
+        "📚 Computer Classes"
+      ],
       btnWork: "View My Work"
     },
     roles: {
@@ -27,7 +34,9 @@ export const translations = {
       appsDeveloper: "Apps Developer",
       graphicDesigner: "Graphic Designer",
       accountBookKeeper: "Account Book Keeper",
-      videoEditor: "Video Editor"
+      videoEditor: "Video Editor",
+      photographer: "Photographer & Videographer",
+      instructor: "Computer Classes Instructor"
     },
     frameworks: {
       title: "Frameworks & Tech Stack",
@@ -123,8 +132,12 @@ export const translations = {
     contact: {
       titlePrefix: "Let's Create Something",
       titleHighlight: "Amazing",
-      subtitle: "Ready to elevate your digital presence? Reach out to discuss your next project, be it a web app, design work, or video editing.",
+      subtitle: "Ready to elevate your digital presence? Reach out to discuss your next project in Lalitpur, Kathmandu, Bhaktapur or anywhere in Nepal. I'm available for web apps, design work, video editing, photography, and computer classes.",
       copyright: "Mahesh Shakya. All Rights Reserved."
+    },
+    footer: {
+      description: "Building premium digital experiences, robust backends, and stunning user interfaces from Nepal.",
+      seoText: "A multidisciplinary professional providing websites, mobile apps, graphic design, video editing, and photography/videography services. Based in Lalitpur (Lagankhel), Kathmandu, and Bhaktapur, serving all of Nepal. I also offer computer classes."
     }
   },
   NEP: {
@@ -146,6 +159,13 @@ export const translations = {
       greeting: "नमस्ते, म महेश शाक्य हुँ",
       prefix: "म अनुभवहरू सिर्जना गर्दछु एक",
       subtitle: "डिजाइन, विकास, व्यापार खाता, र दृश्य कथा बीचको खाडल पूरा गर्ने एक बहु-अनुशासनात्मक पेशेवर।",
+      seoTags: [
+        "📍 ललितपुर, काठमाडौं, भक्तपुर र सम्पूर्ण नेपाल",
+        "💻 वेबसाइट र मोबाइल एप",
+        "🎨 ग्राफिक डिजाइन",
+        "🎥 भिडियो र फोटोग्राफी",
+        "📚 कम्प्युटर कक्षाहरू"
+      ],
       btnWork: "मेरो काम हेर्नुहोस्"
     },
     roles: {
@@ -153,7 +173,9 @@ export const translations = {
       appsDeveloper: "एप्स विकासकर्ता",
       graphicDesigner: "ग्राफिक डिजाइनर",
       accountBookKeeper: "खाता प्रबन्धक",
-      videoEditor: "भिडियो सम्पादक"
+      videoEditor: "भिडियो सम्पादक",
+      photographer: "फोटोग्राफर र भिडियोग्राफर",
+      instructor: "कम्प्युटर कक्षा प्रशिक्षक"
     },
     frameworks: {
       title: "फ्रेमवर्क र प्रविधि",
@@ -249,8 +271,12 @@ export const translations = {
     contact: {
       titlePrefix: "केही",
       titleHighlight: "अद्भुत सिर्जना गरौं",
-      subtitle: "तपाईंको डिजिटल उपस्थितिलाई माथि उठाउन तयार हुनुहुन्छ? वेब एप, डिजाइनको काम, वा भिडियो सम्पादन जस्तोसुकै भए पनि, तपाईंको अर्को परियोजनाबारे छलफल गर्न सम्पर्क गर्नुहोस्।",
+      subtitle: "तपाईंको डिजिटल उपस्थितिलाई माथि उठाउन तयार हुनुहुन्छ? वेबसाइट, एप, डिजाइन, भिडियो सम्पादन, फोटोग्राफी वा कम्प्युटर कक्षाका लागि ललितपुर, काठमाडौं, भक्तपुर वा नेपालभर जहाँबाट पनि सम्पर्क गर्नुहोस्।",
       copyright: "महेश शाक्य। सबै अधिकार सुरक्षित।"
+    },
+    footer: {
+      description: "नेपालबाट प्रिमियम डिजिटल अनुभवहरू, बलियो ब्याकइन्डहरू, र उत्कृष्ट प्रयोगकर्ता इन्टरफेसहरू निर्माण गर्दै।",
+      seoText: "ललितपुर (लगनखेल), काठमाडौं, भक्तपुर र सम्पूर्ण नेपालभर वेबसाइट, मोबाइल एप, ग्राफिक डिजाइन, भिडियो सम्पादन, र फोटोग्राफी/भिडियोग्राफी सेवाहरू प्रदान गर्ने एक पेशेवर। म कम्प्युटर कक्षाहरू पनि सञ्चालन गर्दछु।"
     }
   }
 };
