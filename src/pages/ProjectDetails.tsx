@@ -72,8 +72,10 @@ const ProjectDetails = () => {
           {/* Cover Image */}
           {project.imageUrl && (
             <div className="project-detail-image-wrapper">
-              <img src={project.imageUrl} alt={project.title} />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,10,10,0.8) 0%, transparent 100%)', pointerEvents: 'none' }}></div>
+              <div style={{ position: 'relative', width: '100%', borderRadius: '21px', overflow: 'hidden', zIndex: 2, background: '#000' }}>
+                <img src={project.imageUrl} alt={project.title} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,10,10,0.8) 0%, transparent 100%)', pointerEvents: 'none' }}></div>
+              </div>
             </div>
           )}
 
