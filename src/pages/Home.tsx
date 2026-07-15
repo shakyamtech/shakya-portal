@@ -488,7 +488,7 @@ function Home() {
             {loadingProjects ? (
                <div style={{ color: 'var(--text-secondary)', textAlign: 'center', gridColumn: '1 / -1', padding: '40px 0' }}>Loading projects...</div>
             ) : dynamicProjects.length > 0 ? (
-              dynamicProjects.map((project) => (
+              dynamicProjects.slice(0, 12).map((project) => (
                 <div 
                   key={project.id} 
                   className="premium-project-card"
@@ -520,6 +520,15 @@ function Home() {
                <div style={{ color: 'var(--text-secondary)', textAlign: 'center', gridColumn: '1 / -1', padding: '40px 0' }}>No projects found. Please add some from the Admin Panel.</div>
             )}
           </div>
+          
+          {/* View All Projects Button */}
+          {!loadingProjects && dynamicProjects.length > 12 && (
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '60px' }}>
+              <Link to="/projects" className="btn-primary" style={{ padding: '15px 40px', fontSize: '1.1rem', letterSpacing: '1px' }}>
+                {t.work.btnViewAll || 'View All Projects'} <span>→</span>
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 

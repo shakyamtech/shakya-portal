@@ -67,7 +67,12 @@ export const translations = {
       },
       btnViewApp: "View Live App",
       btnViewMobileApp: "View App",
-      btnVisitSite: "Visit Office Site",
+      btnVisitSite: "Visit Site",
+      btnViewAll: "View All Projects",
+      btnPrev: "Previous",
+      btnNext: "Next",
+      allProjectsTitle: "All Portfolio Projects",
+      allProjectsSubtitle: "Explore the complete archive of my works and systems.",
       projects: {
         p1: {
           title: "Premium Restaurant System",
@@ -206,7 +211,12 @@ export const translations = {
       },
       btnViewApp: "लाइभ एप हेर्नुहोस्",
       btnViewMobileApp: "एप हेर्नुहोस्",
-      btnVisitSite: "अफिस साइट भिजिट गर्नुहोस्",
+      btnVisitSite: "साइट हेर्नुहोस्",
+      btnViewAll: "सबै प्रोजेक्टहरू हेर्नुहोस्",
+      btnPrev: "अघिल्लो",
+      btnNext: "अर्को",
+      allProjectsTitle: "सबै पोर्टफोलियो प्रोजेक्टहरू",
+      allProjectsSubtitle: "मेरो सम्पूर्ण काम र प्रणालीहरूको सङ्ग्रह अन्वेषण गर्नुहोस्।",
       projects: {
         p1: {
           title: "प्रिमियम रेस्टुरेन्ट प्रणाली",
