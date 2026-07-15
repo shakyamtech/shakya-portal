@@ -321,7 +321,14 @@ function Home() {
             className={`hero-image-wrapper ${isLoaded ? 'animate-scale-in' : 'init-hidden'}`}
             style={{ animationDelay: '0.35s' }}
           >
-            <div className="glass-panel hero-image-container">
+            <div 
+              className="glass-panel hero-image-container"
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+              }}
+            >
               <div className="hero-image-crop">
                 <img src="/images/profile_avatar.jpg" alt="Mahesh Shakya Avatar" className="hero-image" />
               </div>
