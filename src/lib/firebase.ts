@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyADe52Ppu9O5rQ9HXFec96JEbx94elBxOU",
-  authDomain: "khataplus-f13b1.firebaseapp.com",
-  projectId: "khataplus-f13b1",
-  storageBucket: "khataplus-f13b1.firebasestorage.app",
-  messagingSenderId: "1012861495605",
-  appId: "1:1012861495605:web:52aa4026034935458e847c"
+  apiKey: "AIzaSyAzr06B8OxjadkTHp9lyL06xBrgu85hqIU",
+  authDomain: "mahesh-portfolio-4c770.firebaseapp.com",
+  projectId: "mahesh-portfolio-4c770",
+  storageBucket: "mahesh-portfolio-4c770.firebasestorage.app",
+  messagingSenderId: "224547787247",
+  appId: "1:224547787247:web:7f21e757504a7a796fe61a"
 };
 
 // Initialize Firebase
