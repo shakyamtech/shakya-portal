@@ -118,7 +118,7 @@ p {
 }
 
 .premium-project-card {
-  background: linear-gradient(160deg, rgba(38, 38, 38, 0.6) 0%, rgba(12, 12, 12, 0.9) 100%);
+  background: rgba(15, 15, 15, 0.6);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -142,7 +142,15 @@ p {
   width: 100%;
   aspect-ratio: 16/9;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.premium-card-content {
+  padding: 24px 20px 20px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(12, 12, 12, 0.9) 60%, rgba(10, 10, 10, 1) 100%);
 }
 
 .premium-image-wrapper img {
