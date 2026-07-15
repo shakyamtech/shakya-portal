@@ -86,8 +86,8 @@ export const translations = {
           desc: "A comprehensive jewellery management system featuring automatic gold/silver price updates, automated billing, inventory tracking, and full management of suppliers, customers, and credits."
         },
         p5: {
-          title: "NextGen Learning Management System",
-          desc: "A multi-platform web application optimized for Apple, Android, and Windows devices. It features real-time course tracking, interactive assignments, cross-device syncing, and an intuitive dashboard that revolutionizes the e-learning experience."
+          title: "Lagankhel IT Academy",
+          desc: "A full-stack Learning Management System built with Next.js 16 (App Router) and React 19. Backend powered by Firebase Admin SDK with Firestore NoSQL database — managing users, courses, assignments, submissions, and announcements in real time. Authentication uses bcryptjs password hashing + JWT (jose) with HttpOnly cookie sessions. Features three role-based dashboards (Admin, Teacher, Student), server actions, middleware-based RBAC, and a fully responsive public website with Hero Slider, Testimonials, and animated sections. Deployed live on Vercel."
         },
         p6: {
           title: "KhataPlus",
@@ -225,8 +225,8 @@ export const translations = {
           desc: "स्वचालित सुन/चाँदी मूल्य अपडेट, स्वचालित बिलिङ, स्टक ट्र्याकिङ, र आपूर्तिकर्ता, ग्राहकहरू र क्रेडिटहरूको पूर्ण व्यवस्थापन सहितको विस्तृत गहना व्यवस्थापन प्रणाली।"
         },
         p5: {
-          title: "नेक्स्टजेन लर्निङ म्यानेजमेन्ट सिस्टम (LMS)",
-          desc: "एप्पल, एन्ड्रोइड, र विन्डोज उपकरणहरूको लागि अनुकूलित एक बहु-प्लेटफर्म वेब अनुप्रयोग। यसमा वास्तविक-समय पाठ्यक्रम ट्र्याकिङ, अन्तरक्रियात्मक असाइनमेन्टहरू, क्रस-डिभाइस सिंक, र ई-लर्निङ अनुभवलाई क्रान्तिकारी बनाउने सहज ड्यासबोर्ड समावेश छ।"
+          title: "लगनखेल आईटी एकेडेमी",
+          desc: "Next.js 16 (App Router) र React 19 मा निर्मित पूर्ण फुल-स्ट्याक लर्निङ म्यानेजमेन्ट सिस्टम। ब्याकइन्डमा Firebase Admin SDK र Firestore NoSQL डाटाबेस प्रयोग गरी युजर, कोर्स, असाइनमेन्ट, सबमिसन, र घोषणाहरू रियल-टाइममा व्यवस्थापन गरिन्छ। प्रमाणीकरणमा bcryptjs पासवर्ड ह्यासिङ, JWT (jose) सेसन, र HttpOnly कुकी प्रयोग गरिएको छ। एडमिन, शिक्षक, र विद्यार्थी — तीनवटा भूमिका-आधारित ड्यासबोर्ड, सर्भर एक्सन, र मिडलवेयर RBAC सहित Vercel मा लाइभ।"
         },
         p6: {
           title: "खाताप्लस",

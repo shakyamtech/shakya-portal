@@ -24,6 +24,7 @@ const Admin = () => {
   const [link, setLink] = useState('');
   const [tag, setTag] = useState('WEB APP');
   const [imageFile, setImageFile] = useState<File | null>(null);
+  const [sortOrder, setSortOrder] = useState<number>(99);
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [message, setMessage] = useState('');
@@ -39,7 +40,7 @@ const Admin = () => {
   const fetchProjects = async () => {
     setLoadingProjects(true);
     try {
-      const q = query(collection(db, 'projects'), orderBy('createdAt', 'desc'));
+      const q = query(collection(db, 'projects'), orderBy('sortOrder', 'asc'));
       const querySnapshot = await getDocs(q);
       const fetchedProjects: any[] = [];
       querySnapshot.forEach((document) => {
@@ -96,6 +97,7 @@ const Admin = () => {
     setLink('');
     setTag('WEB APP');
     setImageFile(null);
+    setSortOrder(99);
     setEditingId(null);
     setExistingImageUrl('');
     const fileInput = document.getElementById('image-upload') as HTMLInputElement;
@@ -109,6 +111,7 @@ const Admin = () => {
     setDescription(project.description);
     setLink(project.link);
     setTag(project.tag);
+    setSortOrder(project.sortOrder ?? 99);
     setExistingImageUrl(project.imageUrl || '');
     setMessage('');
     setActiveTab('add_project'); // Switch to form
@@ -159,6 +162,7 @@ const Admin = () => {
           link,
           tag,
           imageUrl: downloadURL,
+          sortOrder: Number(sortOrder),
         });
         setMessage('Project updated successfully!');
       } else {
@@ -168,6 +172,7 @@ const Admin = () => {
           link,
           tag,
           imageUrl: downloadURL,
+          sortOrder: Number(sortOrder),
           createdAt: new Date(),
         });
         setMessage('Project uploaded successfully!');
@@ -508,6 +513,11 @@ const Admin = () => {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <label style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: 500 }}>Tag (e.g., WEB APP)</label>
                   <input type="text" value={tag} onChange={(e) => setTag(e.target.value)} required style={{ padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.3)', color: 'white', outline: 'none' }} placeholder="WEB APP" />
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <label style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: 500 }}>Sort Order <span style={{fontSize: '0.8rem', opacity: 0.7, fontWeight: 400}}>(1 = pahilo, sano = agadi)</span></label>
+                  <input type="number" value={sortOrder} onChange={(e) => setSortOrder(Number(e.target.value))} min="1" style={{ padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.3)', color: 'white', outline: 'none' }} placeholder="1" />
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', gridColumn: '1 / -1' }}>

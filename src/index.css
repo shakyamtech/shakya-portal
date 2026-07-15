@@ -112,7 +112,6 @@ p {
 }
 
 .project-card:hover {
-  transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px var(--accent-glow);
   border-color: rgba(212, 175, 55, 0.45) !important;
 }
@@ -317,13 +316,14 @@ p {
 }
 
 .project-card img {
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: filter, opacity;
+  filter: grayscale(40%) brightness(0.8);
 }
 
 .project-card:hover img {
-  transform: scale(1.06);
-  opacity: 0.95;
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
 }
 
 /* Premium Animations */

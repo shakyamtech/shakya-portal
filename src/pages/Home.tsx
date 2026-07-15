@@ -69,7 +69,7 @@ function Home() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const q = query(collection(db, 'projects'), orderBy('createdAt', 'desc'));
+        const q = query(collection(db, 'projects'), orderBy('sortOrder', 'asc'));
         const querySnapshot = await getDocs(q);
         const fetchedProjects: any[] = [];
         querySnapshot.forEach((doc) => {
