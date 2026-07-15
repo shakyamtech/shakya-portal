@@ -624,9 +624,9 @@ function App() {
           <div style={{ flex: '1 1 200px' }}>
             <h4 style={{ color: '#fff', fontWeight: 600, marginBottom: '20px', fontSize: '1.1rem' }}>Quick Links</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <button onClick={() => scrollToSection('home')} className="footer-link">Home</button>
-              <button onClick={() => scrollToSection('skills')} className="footer-link">Skills</button>
-              <button onClick={() => scrollToSection('work')} className="footer-link">Work</button>
+              <a href="#about" className="footer-link">Home</a>
+              <a href="#frameworks" className="footer-link">Skills</a>
+              <a href="#work" className="footer-link">Work</a>
             </div>
           </div>
         </div>
