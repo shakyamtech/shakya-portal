@@ -313,7 +313,7 @@ const Admin = () => {
             <img src="/logo_v2.png" alt="Mahesh Shakya Logo" style={{ height: '35px', width: 'auto', objectFit: 'contain' }} />
             <h2 style={{ color: 'white', fontSize: '1.5rem', fontWeight: 800 }}>Admin <span style={{ color: 'var(--accent)' }}>CMS</span></h2>
           </div>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Portfolio Management</p>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', textAlign: 'center', marginTop: '8px', letterSpacing: '0.5px' }}>Portfolio Management</p>
         </div>
 
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '10px', flex: 1 }}>
