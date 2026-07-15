@@ -71,8 +71,8 @@ const ProjectDetails = () => {
         <div className="animate-premium-fade-up">
           {/* Cover Image */}
           {project.imageUrl && (
-            <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', marginBottom: '40px', boxShadow: '0 20px 40px rgba(0,0,0,0.5)', position: 'relative', background: 'rgba(255,255,255,0.02)' }}>
-              <img src={project.imageUrl} alt={project.title} style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <div className="project-detail-image-wrapper">
+              <img src={project.imageUrl} alt={project.title} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,10,10,0.8) 0%, transparent 100%)', pointerEvents: 'none' }}></div>
             </div>
           )}
