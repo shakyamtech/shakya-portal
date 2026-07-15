@@ -7,6 +7,7 @@ import '../index.css';
 import { translations } from '../translations';
 import type { Language } from '../translations';
 import { Link } from 'react-router-dom';
+import { fallbackProjects } from '../data/fallbackProjects';
 
 function Home() {
   const [lang, setLang] = useState<Language>('ENG');
@@ -75,9 +76,16 @@ function Home() {
         querySnapshot.forEach((doc) => {
           fetchedProjects.push({ id: doc.id, ...doc.data() });
         });
-        setDynamicProjects(fetchedProjects);
+        if (fetchedProjects.length === 0) {
+          console.warn("No projects found in Firebase, using fallback static projects.");
+          setDynamicProjects(fallbackProjects);
+        } else {
+          setDynamicProjects(fetchedProjects);
+        }
       } catch (error) {
         console.error("Error fetching projects: ", error);
+        console.warn("Fallback to static projects due to error.");
+        setDynamicProjects(fallbackProjects);
       } finally {
         setLoadingProjects(false);
       }
