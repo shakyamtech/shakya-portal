@@ -600,7 +600,7 @@ function Home() {
             © {new Date().getFullYear()} {t.contact.copyright}
           </p>
           <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', display: 'flex', gap: '15px' }}>
-            <span>Crafted with passion in Nepal 🇳🇵</span>
+            <span>Built with React & Firebase ⚡</span>
           </div>
         </div>
       </footer>
