@@ -476,11 +476,11 @@ function Home() {
                   <div className="premium-image-wrapper">
                     <img src={project.imageUrl} alt={project.title} loading="lazy" width="800" height="240" />
                   </div>
-                  <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                     <div className="project-badge">{project.tag}</div>
-                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, margin: '0 0 10px 0', color: '#fff', letterSpacing: '-0.5px' }}>{project.title}</h3>
-                    <p className="line-clamp-3" style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, flex: 1, fontSize: '0.95rem' }}>{project.description}</p>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '18px', alignItems: 'center' }}>
+                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, margin: '0 0 8px 0', color: '#fff', letterSpacing: '-0.5px', lineHeight: 1.3 }}>{project.title}</h3>
+                    <p className="line-clamp-3" style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, fontSize: '0.9rem', marginBottom: '0' }}>{project.description}</p>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 'auto', paddingTop: '16px', alignItems: 'center' }}>
                       <Link to={`/project/${project.id}`} className="btn-read-more">Read More <span>→</span></Link>
                       <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-live-app" title={t.work.btnViewApp}>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
