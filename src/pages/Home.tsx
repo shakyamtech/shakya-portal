@@ -216,17 +216,6 @@ function Home() {
     });
   };
 
-  const scrollToSection = (id: string) => {
-    if (id === 'home') {
-      scrollToTop();
-      return;
-    }
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const getStatusText = () => {
     if (preloaderStage === 0) return t.preloader.initializing;
     if (preloaderStage === 1) return t.preloader.loadingCreativeAssets;
