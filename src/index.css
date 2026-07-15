@@ -118,12 +118,10 @@ p {
 }
 
 .premium-project-card {
-  background: rgba(15, 15, 15, 0.6);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
   border-radius: 24px;
+  padding: 2px; /* acts as the border */
+  background: rgba(255, 255, 255, 0.06);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -131,10 +129,40 @@ p {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
+.premium-project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(45deg, #ff007f, #d4af37, #00f2fe, #ff007f);
+  background-size: 300% 300%;
+  animation: goldGradientMove 4s ease infinite;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  -webkit-mask: radial-gradient(circle 250px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+  mask: radial-gradient(circle 250px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+  z-index: 0;
+}
+
+.premium-project-card:hover::before {
+  opacity: 1;
+}
+
+.premium-project-card-inner {
+  background: rgba(15, 15, 15, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
 .premium-project-card:hover {
   transform: translateY(-12px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 40px rgba(212, 175, 55, 0.15);
-  border-color: rgba(212, 175, 55, 0.3);
 }
 
 .premium-image-wrapper {
