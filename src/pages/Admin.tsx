@@ -387,7 +387,10 @@ const Admin = () => {
                 return 'Good Evening ! 🌙';
               })()}
             </span>
-            <h1 style={{ color: 'white', fontSize: '2rem', marginBottom: '10px', marginTop: 0 }}>Welcome Back, Mr. Mahesh Shakya</h1>
+            <h1 style={{ color: 'white', fontSize: '2rem', marginBottom: '10px', marginTop: 0 }}>
+              Welcome Back, <br />
+              Mr. Mahesh Shakya
+            </h1>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '40px' }}>Here is an overview of your portfolio metrics.</p>
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
