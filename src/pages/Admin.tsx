@@ -379,7 +379,14 @@ const Admin = () => {
         {/* Dashboard View */}
         {activeTab === 'dashboard' && (
           <div className="animate-premium-fade-up">
-            <h1 style={{ color: 'white', fontSize: '2rem', marginBottom: '10px' }}>Welcome Back, Admin</h1>
+            <h1 style={{ color: 'white', fontSize: '2rem', marginBottom: '10px' }}>
+              {(() => {
+                const hour = new Date().getHours();
+                if (hour < 12) return 'Good Morning';
+                if (hour < 18) return 'Good Afternoon';
+                return 'Good Evening';
+              })()}, Mr. Mahesh Shakya
+            </h1>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '40px' }}>Here is an overview of your portfolio metrics.</p>
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
