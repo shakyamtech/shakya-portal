@@ -385,7 +385,7 @@ const Admin = () => {
                 if (hour < 12) return 'Good Morning';
                 if (hour < 18) return 'Good Afternoon';
                 return 'Good Evening';
-              })()}, Mr. Mahesh Shakya
+              })()} & Welcome Back, Mr. Mahesh Shakya
             </h1>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '40px' }}>Here is an overview of your portfolio metrics.</p>
             
