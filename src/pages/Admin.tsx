@@ -18,6 +18,7 @@ const Admin = () => {
   const [activeTab, setActiveTab] = useState<'dashboard' | 'projects' | 'add_project'>('dashboard');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
+  const [weatherEmoji, setWeatherEmoji] = useState<string | null>(null);
 
   // Form State
   const [title, setTitle] = useState('');
@@ -91,6 +92,36 @@ const Admin = () => {
       setUser(currentUser);
     });
     return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        try {
+          const { latitude, longitude } = position.coords;
+          const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`);
+          if (res.ok) {
+            const data = await res.json();
+            const code = data.current_weather.weathercode;
+            const isDay = data.current_weather.is_day; // 1 or 0
+            
+            let emoji = isDay ? '☀️' : '🌙';
+            if (code === 1 || code === 2) emoji = isDay ? '🌤️' : '☁️';
+            else if (code === 3) emoji = '☁️';
+            else if ([45, 48].includes(code)) emoji = '🌫️';
+            else if ([51, 53, 55, 61, 63, 65, 80, 81, 82].includes(code)) emoji = '🌧️';
+            else if ([71, 73, 75, 77, 85, 86].includes(code)) emoji = '❄️';
+            else if ([95, 96, 99].includes(code)) emoji = '⛈️';
+            
+            setWeatherEmoji(emoji);
+          }
+        } catch (error) {
+          console.error("Error fetching weather:", error);
+        }
+      }, () => {
+        console.log("Geolocation permission denied or error.");
+      });
+    }
   }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -382,9 +413,13 @@ const Admin = () => {
             <span style={{ color: 'var(--accent)', fontSize: '1rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px', display: 'inline-block' }}>
               {(() => {
                 const hour = new Date().getHours();
-                if (hour < 12) return 'Good Morning ! ☀️';
-                if (hour < 18) return 'Good Afternoon ! 🌤️';
-                return 'Good Evening ! 🌙';
+                let timeGreeting = '';
+                let defaultEmoji = '';
+                if (hour < 12) { timeGreeting = 'Good Morning'; defaultEmoji = '☀️'; }
+                else if (hour < 18) { timeGreeting = 'Good Afternoon'; defaultEmoji = '🌤️'; }
+                else { timeGreeting = 'Good Evening'; defaultEmoji = '🌙'; }
+                
+                return `${timeGreeting} ! ${weatherEmoji || defaultEmoji}`;
               })()}
             </span>
             <h1 style={{ color: 'white', fontSize: '2rem', marginBottom: '10px', marginTop: 0 }}>
