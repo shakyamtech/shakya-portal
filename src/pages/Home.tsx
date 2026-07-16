@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { collection, getDocs, query, orderBy } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy, doc, setDoc, increment } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import { Globe, Smartphone, Palette, Calculator, Video, Camera, Aperture, Navigation, Sliders, MonitorPlay } from 'lucide-react';
 import { FaWhatsapp, FaFacebookMessenger, FaGithub, FaPhone } from 'react-icons/fa6';
@@ -12,6 +12,25 @@ import { fallbackProjects } from '../data/fallbackProjects';
 function Home() {
   const [lang, setLang] = useState<Language>('ENG');
   const t = translations[lang];
+
+  useEffect(() => {
+    const trackVisitor = async () => {
+      const hasVisited = sessionStorage.getItem('hasVisited');
+      // Check for common web crawlers/bots
+      const isBot = /bot|googlebot|crawler|spider|robot|crawling|bingbot|yandex|duckduckbot/i.test(navigator.userAgent);
+      
+      if (!hasVisited && !isBot) {
+        try {
+          const statsRef = doc(db, 'stats', 'visitors');
+          await setDoc(statsRef, { count: increment(1) }, { merge: true });
+          sessionStorage.setItem('hasVisited', 'true');
+        } catch (error) {
+          console.error("Error tracking visitor:", error);
+        }
+      }
+    };
+    trackVisitor();
+  }, []);
 
   const rolesData = [
     { name: t.roles.webDeveloper, icon: <Globe size={40} strokeWidth={1.5} /> },

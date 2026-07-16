@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
 import type { User } from 'firebase/auth';
-import { collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, updateDoc } from 'firebase/firestore';
+import { collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, updateDoc, getDoc } from 'firebase/firestore';
 import { auth, db } from '../lib/firebase';
-import { Eye, EyeOff, LayoutDashboard, FolderKanban, PlusSquare, LogOut, Menu, X } from 'lucide-react';
+import { Eye, EyeOff, LayoutDashboard, FolderKanban, PlusSquare, LogOut, Menu, X, Users } from 'lucide-react';
 import '../index.css';
 
 const Admin = () => {
@@ -17,6 +17,7 @@ const Admin = () => {
   // CMS State
   const [activeTab, setActiveTab] = useState<'dashboard' | 'projects' | 'add_project'>('dashboard');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [visitorCount, setVisitorCount] = useState<number | null>(null);
 
   // Form State
   const [title, setTitle] = useState('');
@@ -55,8 +56,23 @@ const Admin = () => {
   };
 
   useEffect(() => {
+    const fetchVisitorCount = async () => {
+      try {
+        const statsRef = doc(db, 'stats', 'visitors');
+        const statsSnap = await getDoc(statsRef);
+        if (statsSnap.exists()) {
+          setVisitorCount(statsSnap.data().count);
+        } else {
+          setVisitorCount(0);
+        }
+      } catch (error) {
+        console.error("Error fetching visitor count: ", error);
+      }
+    };
+
     if (user) {
       fetchProjects();
+      fetchVisitorCount();
     }
   }, [user]);
 
@@ -384,6 +400,16 @@ const Admin = () => {
                 <div>
                   <h3 style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '5px' }}>Portfolio Status</h3>
                   <p style={{ color: '#00ED64', fontSize: '1.2rem', fontWeight: 600 }}>Active & Live</p>
+                </div>
+              </div>
+
+              <div className="glass-panel" style={{ padding: '30px', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '20px' }}>
+                <div style={{ background: 'rgba(147, 51, 234, 0.1)', padding: '20px', borderRadius: '12px', color: '#A855F7' }}>
+                  <Users size={32} />
+                </div>
+                <div>
+                  <h3 style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '5px' }}>Total Visitors</h3>
+                  <p style={{ color: 'white', fontSize: '2rem', fontWeight: 800 }}>{visitorCount !== null ? visitorCount : '...'}</p>
                 </div>
               </div>
             </div>
