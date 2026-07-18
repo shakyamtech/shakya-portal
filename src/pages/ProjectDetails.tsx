@@ -4,6 +4,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import '../index.css';
+import { fallbackProjects } from '../data/fallbackProjects';
 
 const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -14,19 +15,30 @@ const ProjectDetails = () => {
   useEffect(() => {
     const fetchProject = async () => {
       if (!id) return;
+      let foundProject = null;
       try {
         const docRef = doc(db, 'projects', id);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-          setProject({ id: docSnap.id, ...docSnap.data() });
-        } else {
-          setProject(null);
+          foundProject = { id: docSnap.id, ...docSnap.data() };
         }
       } catch (error) {
         console.error("Error fetching project details:", error);
-      } finally {
-        setLoading(false);
       }
+
+      if (foundProject) {
+        setProject(foundProject);
+      } else {
+        // Fallback: search in fallbackProjects (case-insensitive and tolerant of l/I/1 mixups)
+        const normalizeId = (s: string) => s.toLowerCase().replace(/[il1]/g, 'l');
+        const localProject = fallbackProjects.find(p => normalizeId(p.id) === normalizeId(id));
+        if (localProject) {
+          setProject(localProject);
+        } else {
+          setProject(null);
+        }
+      }
+      setLoading(false);
     };
 
     fetchProject();
