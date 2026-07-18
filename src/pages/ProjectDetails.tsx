@@ -100,6 +100,13 @@ const ProjectDetails = () => {
               {project.title}
             </h1>
 
+            <div className="glass-panel" style={{ padding: '40px', borderRadius: '20px', width: '100%', marginBottom: '40px' }}>
+              <h3 style={{ fontSize: '1.5rem', color: 'var(--accent)', marginBottom: '20px' }}>About The Project</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.8, whiteSpace: 'pre-wrap' }}>
+                {project.description}
+              </p>
+            </div>
+
             <div style={{ display: 'flex', gap: '20px', marginBottom: '50px' }}>
               <a 
                 href={project.link} 
@@ -110,13 +117,6 @@ const ProjectDetails = () => {
               >
                 Visit Live Project <ExternalLink size={20} />
               </a>
-            </div>
-
-            <div className="glass-panel" style={{ padding: '40px', borderRadius: '20px', width: '100%' }}>
-              <h3 style={{ fontSize: '1.5rem', color: 'var(--accent)', marginBottom: '20px' }}>About The Project</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.8, whiteSpace: 'pre-wrap' }}>
-                {project.description}
-              </p>
             </div>
           </div>
         </div>
